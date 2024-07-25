@@ -14,8 +14,8 @@ import '@@/node_modules/swiper/modules/autoplay.css';
 export function BottomSlides() {
 
     const slideElement: JSX.Element = <SwiperSlide>
-        <div className=' w-full h-full relative grid grid-cols-2 bg-primary gap-y-3 max-[670px]:grid-cols-1 max-[670px]:pb-12 max-[670px]:pt-4'>
-            <div className='w-full h-full flex items-center justify-center z-10'>
+        <div className=' w-full h-full relative grid grid-cols-2 bg-primary gap-y-3 max-[670px]:grid-cols-1 max-[670px]:pb-12 max-[670px]:pt-4 min-[1400px]:gap-x-28'>
+            <div className='w-full h-full flex items-center justify-center z-10 min-[1400px]:justify-end'>
                 <Image
                     src={Smart_watch}
                     alt={'whatch picture'}

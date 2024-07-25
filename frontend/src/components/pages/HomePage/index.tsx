@@ -43,7 +43,6 @@ export default function Home() {
     const productOffersRef = useRef(null);
 
     const scrollIntoView = (elRef: MutableRefObject<(HTMLElement | null)>): void => {
-        console.log(elRef);
         elRef && 
             elRef.current?.scrollIntoView({
                 behavior: 'smooth',
