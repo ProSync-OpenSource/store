@@ -1,19 +1,19 @@
 import Image from "next/image";
 
-import Woman_model_1 from '../../../../../../../public/assets/home/woman_model_1.png';
+import Woman_model_1 from '@@/public/assets/home/woman_model_1.png';
 
-import '../../../../../../../node_modules/swiper/swiper.css';
-import '../../../../../../../node_modules/swiper/modules/pagination.css';
-import '../../../../../../../node_modules/swiper/modules/autoplay.css';
-import '../../../../../../../node_modules/swiper/modules/navigation.css';
+import '@@/node_modules/swiper/swiper.css';
+import '@@/node_modules/swiper/modules/pagination.css';
+import '@@/node_modules/swiper/modules/autoplay.css';
+import '@@/node_modules/swiper/modules/navigation.css';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-import Arrow_left from '../../../../../../../public/assets/home/arrow_left.png';
-import Arrow_right from '../../../../../../../public/assets/home/arrow_right.png';
+import Arrow_left from '@@/public/assets/home/arrow_left.png';
+import Arrow_right from '@@/public/assets/home/arrow_right.png';
 
-import { HeaderSlidesContainer, SwiperContainer } from "../../../style";
+import { HeaderSlidesContainer, SwiperContainer } from "@/components/pages/HomePage/style";
 
 interface Props {
     onButtonClicked: () => void;

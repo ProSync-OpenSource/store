@@ -4,14 +4,14 @@ import {MutableRefObject, useRef, useEffect, useState } from 'react';
 
 import Image from 'next/image';
 
-import Arrow_right from '../../../../public/assets/home/arrow_right_black.png';
+import Arrow_right from '@@/public/assets/home/arrow_right_black.png';
 
 import { ProductsSlide } from './components/sliders/products-carousel/carousel';
 import { TopSlides } from './components/sliders/top-carousel/carousel';
-import { Header } from '../../shared/header/header';
+import { Header } from '@/components/shared/header/header';
 import { FeaturesSection } from './components/features-section/features';
 import { BottomSlides } from './components/sliders/bottom-carousel/carousel';
-import { Footer } from '../../shared/footer/footer';
+import { Footer } from '@/components/shared/footer/footer';
 
 import * as Style from './style';
 

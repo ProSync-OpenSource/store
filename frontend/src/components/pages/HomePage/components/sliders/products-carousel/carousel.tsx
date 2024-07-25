@@ -2,18 +2,18 @@ import Image from 'next/image';
 
 import { FaStar } from "react-icons/fa";
 
-import Arrow_left from '../../../../../../../public/assets/home/arrow_left.png';
-import Arrow_right from '../../../../../../../public/assets/home/arrow_right.png';
+import Arrow_left from '@@/public/assets/home/arrow_left.png';
+import Arrow_right from '@@/public/assets/home/arrow_right.png';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
-import '../../../../../../../node_modules/swiper/swiper.css';
-import '../../../../../../../node_modules/swiper/modules/pagination.css';
-import '../../../../../../../node_modules/swiper/modules/autoplay.css';
-import '../../../../../../../node_modules/swiper/modules/navigation.css';
+import '@@/node_modules/swiper/swiper.css';
+import '@@/node_modules/swiper/modules/pagination.css';
+import '@@/node_modules/swiper/modules/autoplay.css';
+import '@@/node_modules/swiper/modules/navigation.css';
 
-import { ProductsSlideElement, SwiperContainer } from '../../../style';
+import { ProductsSlideElement, SwiperContainer } from '@/components/pages/HomePage/style';
 
 type SwiperProps = {
     productsData?: any,
