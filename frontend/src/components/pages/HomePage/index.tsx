@@ -1,5 +1,7 @@
 'use client';
 
+/**/
+
 import {MutableRefObject, useRef, useEffect, useState } from 'react';
 
 import Image from 'next/image';
