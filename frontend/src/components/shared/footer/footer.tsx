@@ -1,13 +1,11 @@
 import { FooterContainer } from '@/app/styles'
-
 import Image from 'next/image'
-
-import Elo_card from '@/public/assets/shared/elo_card.png'
-import American_card from '@/public/assets/shared/american_express.png'
-import Boleto from '@/public/assets/shared/boleto_img.png'
-import Mastercard from '@/public/assets/shared/mastercard.png'
-import Pix from '@/public/assets/shared/pix_img.png'
-import Visa_card from '@/public/assets/shared/visa_card.png'
+import Elo_card from '@@/public/assets/shared/elo_card.png'
+import American_card from '@@/public/assets/shared/american_express.png'
+import Boleto from '@@/public/assets/shared/boleto_img.png'
+import Mastercard from '@@/public/assets/shared/mastercard.png'
+import Pix from '@@/public/assets/shared/pix_img.png'
+import Visa_card from '@@/public/assets/shared/visa_card.png'
 
 export function Footer() {
   return (
