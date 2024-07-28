@@ -6,11 +6,11 @@ import Image from 'next/image';
 
 import Arrow_right from '@@/public/assets/home/arrow_right_black.png';
 
-import { ProductsSlide } from './productsCarousel';
-import { TopSlides } from './topCarousel';
+import { ProductsSlide } from './productsCarousel/index';
+import { TopSlides } from './topCarousel/index';
 import { Header } from '@/components/shared/header';
-import { FeaturesSection } from './featuresSection';
-import { BottomSlides } from './bottomCarousel';
+import { FeaturesSection } from './featuresSection/index';
+import { BottomSlides } from './bottomCarousel/index';
 import { Footer } from '@/components/shared/footer';
 
 import * as Style from './styles';
