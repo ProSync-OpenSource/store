@@ -13,7 +13,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Arrow_left from '@@/public/assets/home/arrow_left.png';
 import Arrow_right from '@@/public/assets/home/arrow_right.png';
 
-import { HeaderSlidesContainer, SwiperContainer } from "@/components/pages/HomePage/style";
+import { HeaderSlidesContainer, SwiperContainer } from "@/components/HomePage/styles";
 
 interface Props {
     onButtonClicked: () => void;
@@ -31,12 +31,12 @@ export function TopSlides(props: Props) {
                     </h2>
                     <div className='flex flex-row justify-between items-center'>
                         <div className='flex flex-col items-start justify-center pr-5 relative before:w-[1pt] before:h-[80%] before:bg-base-color before:absolute before:right-0 before:translate-x-2/4'>
-                            <span className='text-white text-xl font-semibold max-[900px]:text-lg max-[800px]:text-base max-[550px]:text-sm'>50+</span>
-                            <span className='font-normal text-[17px] text-white max-[900px]:text-sm'>Categorias de produtos</span>
+                            <p className='text-white text-xl font-semibold max-[900px]:text-lg max-[800px]:text-base max-[550px]:text-sm'>50+</p>
+                            <p className='font-normal text-[17px] text-white max-[900px]:text-sm'>Categorias de produtos</p>
                         </div>
                         <div className='flex flex-col items-start justify-center pl-5'>
-                            <span className='text-white text-xl font-semibold max-[900px]:text-lg max-[800px]:text-base max-[550px]:text-sm'>100M+</span>
-                            <span className='font-normal text-[17px] text-white max-[900px]:text-sm'>Clientes satisfeitos</span>
+                            <p className='text-white text-xl font-semibold max-[900px]:text-lg max-[800px]:text-base max-[550px]:text-sm'>100M+</p>
+                            <p className='font-normal text-[17px] text-white max-[900px]:text-sm'>Clientes satisfeitos</p>
                         </div>
                     </div>
                     <button onClick={props.onButtonClicked} className="btn bg-white text-primary w-52 hover:bg-white text-base outline-none max-[800px]:mt-3 max-[800px]:text-sm">Conferir ofertas</button>
@@ -46,7 +46,7 @@ export function TopSlides(props: Props) {
             <div className='w-full h-full flex items-end justify-center max-[900px]:justify-end max-[750px]:hidden min-[1400px]:justify-start'>
                 <Image
                     src={Woman_model_1}
-                    alt={'woman picture'}
+                    alt={'white woman looking to the left'}
                     height={500}
                     width={600}
                     className="w-auto h-full object-cover max-[800px]:h-[310px] max-[500px]:max-h-60"
@@ -85,10 +85,10 @@ export function TopSlides(props: Props) {
                 modules={[Pagination, Navigation, Autoplay]}
                 spaceBetween={0}
             >
-              {slideElement}
-              {slideElement}
-              {slideElement}
-              {slideElement}
+                {slideElement}
+                {slideElement}
+                {slideElement}
+                {slideElement}
             </Swiper>
 
             <div className='w-full max-[800px]:hidden'>

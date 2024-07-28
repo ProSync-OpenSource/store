@@ -13,7 +13,7 @@ import '@@/node_modules/swiper/modules/pagination.css';
 import '@@/node_modules/swiper/modules/autoplay.css';
 import '@@/node_modules/swiper/modules/navigation.css';
 
-import { ProductsSlideElement, SwiperContainer } from '@/components/pages/HomePage/style';
+import { ProductsSlideElement, SwiperContainer } from '@/components/HomePage/styles';
 
 type SwiperProps = {
     productsData?: any,
@@ -30,7 +30,7 @@ export function ProductsSlide(props: SwiperProps) {
         },
         900: {
             spaceBetween: 30
-        },  
+        },
     };
 
     const slideElement: JSX.Element =
@@ -40,7 +40,7 @@ export function ProductsSlide(props: SwiperProps) {
                 <div className='w-full flex justify-center items-center h-80 overflow-hidden'>
                     <Image
                         src={props.productsData.product_image}
-                        alt={'smart watch picture'}
+                        alt={'black smart watch with amoled screen'}
                         width={500}
                         height={500}
                         className='w-20 h-auto object-cover max-[900px]:w-16'
@@ -48,7 +48,7 @@ export function ProductsSlide(props: SwiperProps) {
                 </div>
 
                 <div className='w-full h-full flex flex-col items-start justify-start pb-3 gap-y-2'>
-                    <span className='text-gray-800 font-medium text-[16px] max-[900px]:text-[15px]'>{props.productsData.product_title}</span>
+                    <p className='text-gray-800 font-medium text-[16px] max-[900px]:text-[15px]'>{props.productsData.product_title}</p>
 
                     <div className='w-full flex flex-col items-start justify-center'>
 
@@ -60,23 +60,23 @@ export function ProductsSlide(props: SwiperProps) {
                                 <FaStar className='text-orange-400 text-sm' />
                                 <FaStar className='text-gray-400 text-sm' />
                             </div>
-                            <span className='text-gray-800 font-medium text-sm max-[900px]:text-[13px]'>{props.productsData.vote_average}</span>
+                            <p className='text-gray-800 font-medium text-sm max-[900px]:text-[13px]'>{props.productsData.vote_average}</p>
                         </div>
 
                         {props.productsData.offer ? (
 
                             <>
-                                <span className='text-gray-500 text-sm font-medium mt-1 leading-tight line-through max-[900px]:text-[13px]'>R${props.productsData.product_price}</span>
-                                <span className='text-gray-800 font-bold text-[27px] leading-tight'>R${`${(props.productsData.product_price * (1 - props.productsData.offer)).toFixed(2)}`.replace('.', ',')}</span>
+                                <p className='text-gray-500 text-sm font-medium mt-1 leading-tight line-through max-[900px]:text-[13px]'>R${props.productsData.product_price}</p>
+                                <p className='text-gray-800 font-bold text-[27px] leading-tight'>R${`${(props.productsData.product_price * (1 - props.productsData.offer)).toFixed(2)}`.replace('.', ',')}</p>
                             </>
 
                         ) : (
 
-                            <span className='text-gray-800 font-bold text-[27px] leading-tight'>R$ {`${props.productsData.product_price}`.replace('.', ',')}</span>
+                            <p className='text-gray-800 font-bold text-[27px] leading-tight'>R$ {`${props.productsData.product_price}`.replace('.', ',')}</p>
 
                         )}
 
-                        <span className='w-full text-gray-500 font-normal text-sm relative max-[900px]:text-[13px]'>
+                        <p className='w-full text-gray-500 font-normal text-sm relative max-[900px]:text-[13px]'>
                             Em {props.productsData.installments}x de <span className='text-gray-950'>
                                 R${`${props.productsData.installments_price}`.replace('.', ',')}
                             </span>
@@ -85,15 +85,15 @@ export function ProductsSlide(props: SwiperProps) {
                                 {props.productsData.stock_status}
                             </span>
 
-                        </span>
+                        </p>
                     </div>
                 </div>
 
                 <div className='absolute top-2 left-2'>
                     {props.productsData.offer ? (
-                        <span className='bg-primary text-white text-xs font-medium rounded-3xl px-3 py-[3px]'>
+                        <p className='bg-primary text-white text-xs font-medium rounded-3xl px-3 py-[3px]'>
                             {props.productsData.offer * 100}% OFF
-                        </span>
+                        </p>
                     ) : null}
                 </div>
             </ProductsSlideElement>

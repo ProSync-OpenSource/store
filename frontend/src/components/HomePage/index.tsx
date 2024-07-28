@@ -1,21 +1,19 @@
 'use client';
 
-/**/
-
-import {MutableRefObject, useRef, useEffect, useState } from 'react';
+import { MutableRefObject, useRef, useEffect, useState } from 'react';
 
 import Image from 'next/image';
 
 import Arrow_right from '@@/public/assets/home/arrow_right_black.png';
 
-import { ProductsSlide } from './components/sliders/products-carousel/carousel';
-import { TopSlides } from './components/sliders/top-carousel/carousel';
-import { Header } from '@/components/shared/header/header';
-import { FeaturesSection } from './components/features-section/features';
-import { BottomSlides } from './components/sliders/bottom-carousel/carousel';
-import { Footer } from '@/components/shared/footer/footer';
+import { ProductsSlide } from './productsCarousel';
+import { TopSlides } from './topCarousel';
+import { Header } from '@/components/shared/header';
+import { FeaturesSection } from './featuresSection';
+import { BottomSlides } from './bottomCarousel';
+import { Footer } from '@/components/shared/footer';
 
-import * as Style from './style';
+import * as Style from './styles';
 
 interface SectionTitleProps {
     element1?: number;
@@ -45,7 +43,7 @@ export default function Home() {
     const productOffersRef = useRef(null);
 
     const scrollIntoView = (elRef: MutableRefObject<(HTMLElement | null)>): void => {
-        elRef && 
+        elRef &&
             elRef.current?.scrollIntoView({
                 behavior: 'smooth',
             });
@@ -83,23 +81,23 @@ export default function Home() {
         };
 
         getElementWidth();
-    },[productSectionTitleRef]);
+    }, [productSectionTitleRef]);
 
     return (
         <Style.HomeContainer>
-            <Header/>
+            <Header />
 
-            <section className='bg-base-color w-full gap-x-0 overflow-hidden mb-[30px] mt-3 max-[900px]:mt-5'>
-                <TopSlides onButtonClicked={scrollToProductsOffers}/>
-            </section>
+            <div className='bg-base-color w-full gap-x-0 overflow-hidden mb-[30px] mt-3 max-[900px]:mt-5'>
+                <TopSlides onButtonClicked={scrollToProductsOffers} />
+            </div>
 
-            <section className='w-full bg-base-color'>
+            <div className='w-full bg-base-color'>
                 <Style.ProductsSectionTitleBox
                     afterElementWidth={sectionTitleWidth.element1}
                 >
-                    <h3 ref={(e) => {productSectionTitleRef.current[0] = e}} className='text-gray-900 relative font-semibold text-[22px] py-3 max-[900px]:text-[19px] max-[550px]:text-base'>Da loja para a sua casa</h3>
+                    <h3 ref={(e) => { productSectionTitleRef.current[0] = e }} className='text-gray-900 relative font-semibold text-[22px] py-3 max-[900px]:text-[19px] max-[550px]:text-base'>Da loja para a sua casa</h3>
                     <div className='flex flex-row place-items-center justify-center gap-x-1 cursor-pointer'>
-                        <span className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm'>Ver todos</span>
+                        <p className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm'>Ver todos</p>
                         <Image
                             src={Arrow_right}
                             alt={'arrow left picture'}
@@ -110,7 +108,7 @@ export default function Home() {
                     </div>
                 </Style.ProductsSectionTitleBox>
 
-                <section className='w-full relative'>
+                <div className='w-full relative'>
                     <ProductsSlide
                         productsData={products}
                         navigation={{
@@ -118,15 +116,15 @@ export default function Home() {
                             prevEl: 'first-carousel-prev'
                         }}
                     />
-                </section>
+                </div>
 
-            </section>
+            </div>
 
-            <section className='w-full flex flex-col gap-y-10'>
+            <div className='w-full flex flex-col gap-y-10'>
                 <Style.ProductsSectionTitleBox afterElementWidth={sectionTitleWidth.element2}>
-                    <h3 ref={(e) => {productSectionTitleRef.current[1] = e}} className='text-gray-900 relative font-semibold text-[22px] top-0 py-3 max-[900px]:text-[19px] max-[550px]:text-base'>Confira os nossos destaques</h3>
+                    <h3 ref={(e) => { productSectionTitleRef.current[1] = e }} className='text-gray-900 relative font-semibold text-[22px] top-0 py-3 max-[900px]:text-[19px] max-[550px]:text-base'>Confira os nossos destaques</h3>
                     <div className='flex flex-row place-items-center justify-center gap-x-1 cursor-pointer'>
-                        <span className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm'>Ver todos</span>
+                        <p className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm'>Ver todos</p>
                         <Image
                             src={Arrow_right}
                             alt={'arrow left picture'}
@@ -137,15 +135,15 @@ export default function Home() {
                     </div>
                 </Style.ProductsSectionTitleBox>
 
-                <FeaturesSection/>
-            </section>
+                <FeaturesSection />
+            </div>
 
-            <section className='w-full bg-base-color mt-[30px]'>
+            <div className='w-full bg-base-color mt-[30px]'>
                 <Style.ProductsSectionTitleBox afterElementWidth={sectionTitleWidth.element3} ref={productOffersRef}>
-                    <h3 ref={(e) => {productSectionTitleRef.current[2] = e}} className='text-gray-900 relative font-semibold text-[22px] py-3 max-[900px]:text-[19px] max-[550px]:text-base'>Ofertas do dia para você</h3>
+                    <h3 ref={(e) => { productSectionTitleRef.current[2] = e }} className='text-gray-900 relative font-semibold text-[22px] py-3 max-[900px]:text-[19px] max-[550px]:text-base'>Ofertas do dia para você</h3>
                     <div className='flex flex-row place-items-center justify-center gap-x-1 cursor-pointer'>
-                        <span className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm'>Ver todos</span>
-                        <Image 
+                        <p className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm'>Ver todos</p>
+                        <Image
                             src={Arrow_right}
                             alt={'arrow left picture'}
                             width={500}
@@ -155,7 +153,7 @@ export default function Home() {
                     </div>
                 </Style.ProductsSectionTitleBox>
 
-                <section className='w-full relative'>
+                <div className='w-full relative'>
                     <ProductsSlide
                         productsData={products}
                         navigation={{
@@ -163,16 +161,16 @@ export default function Home() {
                             prevEl: 'second-carousel-prev'
                         }}
                     />
-                </section>
-            </section>
+                </div>
+            </div>
 
-            <section className='w-screen mb-16 mt-10'>
-                <BottomSlides/>
-            </section>
+            <div className='w-screen mb-16 mt-10'>
+                <BottomSlides />
+            </div>
 
-            <section className='w-full py-10 bg-primary'>
-                <Footer/>
-            </section>
+            <div className='w-full py-10 bg-primary'>
+                <Footer />
+            </div>
         </Style.HomeContainer>
     );
 };

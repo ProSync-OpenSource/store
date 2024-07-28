@@ -130,7 +130,6 @@ export const HomeContainer = styled.section`
     & .swiper-pagination-bullet-active {
         --swiper-pagination-color: white;
     }
-
 `;
 
 export const SwiperContainer = styled.section`

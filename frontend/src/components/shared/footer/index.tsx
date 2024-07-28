@@ -13,18 +13,18 @@ export function Footer () {
     return(
         <FooterContainer>
             <div className="w-full order-1">
-                <h2 className="font-bold text-white text-4xl max-[900px]:text-3xl max-[550px]:text-2xl">ProSync</h2>
+                <h5 className="font-bold text-white text-4xl max-[900px]:text-3xl max-[550px]:text-2xl">ProSync</h5>
 
                 <div className="mt-8 flex flex-col justify-start items-start text-lg text-white font-bold gap-y-3 max-[550px]:gap-y-2 max-[550px]:text-base">
-                    <h3 className="uppercase">Atendimento ao cliente</h3>
-                    <h3>SAC: <span className="font-normal">Serviço de Atendimento ao Consumidor</span></h3>
-                    <h3>E-mail: <span className="font-normal">suporte@prosync.com.br</span></h3>
-                    <h3>Whatsapp: <span className="font-normal">+55 00 0000-0000</span></h3>
+                    <p className="uppercase">Atendimento ao cliente</p>
+                    <p>SAC: <span className="font-normal">Serviço de Atendimento ao Consumidor</span></p>
+                    <p>E-mail: <span className="font-normal">suporte@prosync.com.br</span></p>
+                    <p>Whatsapp: <span className="font-normal">+55 00 0000-0000</span></p>
 
                     <div className="w-full h-[2px] bg-orange-500 my-4 max-[550px]:h-[1px]"></div>
 
                     <div className="flex flex-col text-lg text-white font-normal justify-start items-start gap-y-3 max-[550px]:gap-y-2 max-[550px]:text-base">
-                        <h3 className="font-bold uppercase">Horario de Atendimento</h3>
+                        <p className="font-bold uppercase">Horario de Atendimento</p>
                         <p>Seg a Sex: 09:00h ás 18:00h</p>
                         <p>Sabados, Domingos e Feriados: 09:00h ás 13:00h</p>
                     </div>
@@ -33,7 +33,7 @@ export function Footer () {
 
             <div className="w-full flex justify-center items-center order-2 max-[550px]:justify-start">
                 <div className="w-fit flex flex-col justify-center items-start gap-y-3 text-lg text-white font-normal max-[550px]:gap-y-2 max-[550px]:text-base">
-                    <h3 className="font-bold uppercase">Departamentos</h3>
+                    <p className="font-bold uppercase">Departamentos</p>
                     <p>Mais vendidos</p>
                     <p>Beleza & Elegancia</p>
                     <p>Casa</p>
@@ -45,7 +45,7 @@ export function Footer () {
 
             <div className="w-full flex justify-center items-center order-3 max-[750px]:col-span-2 max-[550px]:justify-start max-[550px]:col-span-1">
                 <div className="w-fit flex flex-col justify-center items-start gap-y-3 text-lg text-white font-normal max-[550px]:gap-y-2 max-[550px]:text-base">
-                    <h3 className="font-bold uppercase">Contato</h3>
+                    <p className="font-bold uppercase">Contato</p>
                     <p>Sobre nos - ProSync</p>
                     <p>Trocas e Devoluções</p>
                     <p>Termos de Serviço</p>
@@ -58,7 +58,7 @@ export function Footer () {
                 <p className="text-sm font-medium text-gray-100">Preços e condições de pagamento exclusivas para compras neste site, podendo variar com o tempo da oferta. Evite comprar em lojas suspeitas ou de origem duvidosa, caso ache que esta sendo enganado ligue: 0800</p>
                 
                 <div className="flex min-w-52 flex-col justify-center items-center gap-y-4 max-[550px]:items-start">
-                    <h3 className="text-sm text-gray-100 text-center w-full font-medium whitespace-nowrap max-[550px]:text-left">Formas de pagamento</h3>
+                    <p className="text-sm text-gray-100 text-center w-full font-medium whitespace-nowrap max-[550px]:text-left">Formas de pagamento</p>
                     <div className="grid grid-cols-3 grid-rows-2 gap-2">
                         <div className="bg-base-color w-[60px] px-1 rounded-sm h-[33px] flex justify-center items-center max-[800px]:h-7">
                             <Image
