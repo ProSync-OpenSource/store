@@ -149,10 +149,20 @@ export const CategoryListItem = styled.li<ListItemProps>`
     font-weight: 500;
     background-color: #5D0C7B;
     color: white;
-    z-index: ${props => props.zIndex};
+    z-index: 10;
     @media screen and (width <= 900px) {
         width: 150px;
         height: 38px;
+    }
+    &:hover {
+        z-index: 50;
+    }
+    & .drop-down-menu {
+        max-height: 0px;
+        transition: max-height .1s ease-out;
+    }
+    &:hover .drop-down-menu {
+        max-height: 400px;
     }
 `;
 
