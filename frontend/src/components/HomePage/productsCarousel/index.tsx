@@ -13,7 +13,7 @@ import '@@/node_modules/swiper/modules/pagination.css';
 import '@@/node_modules/swiper/modules/autoplay.css';
 import '@@/node_modules/swiper/modules/navigation.css';
 
-import { ProductsSlideElement, SwiperContainer } from '@/components/HomePage/styles';
+import { ProductsSlideElement, SwiperContainer } from '@/components/homePage/styles';
 
 type SwiperProps = {
     productsData?: any,

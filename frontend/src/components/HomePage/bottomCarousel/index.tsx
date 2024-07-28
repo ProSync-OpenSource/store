@@ -5,7 +5,7 @@ import { Pagination, Autoplay } from 'swiper/modules';
 
 import Smart_watch from '@@/public/assets/home/smart_watch.png';
 
-import { SwiperContainer } from '@/components/HomePage/styles';
+import { SwiperContainer } from '@/components/homePage/styles';
 
 import '@@/node_modules/swiper/swiper.css';
 import '@@/node_modules/swiper/modules/pagination.css';

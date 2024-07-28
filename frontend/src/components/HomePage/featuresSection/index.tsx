@@ -1,4 +1,4 @@
-import { FeaturesContainer } from "@/components/HomePage/styles";
+import { FeaturesContainer } from "@/components/homePage/styles";
 
 import Family_img from '@@/public/assets/home/family_img.jpg';
 import Kitchen_img from '@@/public/assets/home/kitchen_img.jpg';

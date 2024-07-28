@@ -13,7 +13,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Arrow_left from '@@/public/assets/home/arrow_left.png';
 import Arrow_right from '@@/public/assets/home/arrow_right.png';
 
-import { HeaderSlidesContainer, SwiperContainer } from "@/components/HomePage/styles";
+import { HeaderSlidesContainer, SwiperContainer } from "@/components/homePage/styles";
 
 interface Props {
     onButtonClicked: () => void;
