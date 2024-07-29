@@ -1,5 +1,5 @@
-import AuthPage from '@/components/AuthPage';
+import LoginPage from '@/components/pages/LoginPage';
 
 export default function Login() {
-  return <AuthPage isLogin={true}/>
+  return <LoginPage />
 }
