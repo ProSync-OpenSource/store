@@ -38,8 +38,6 @@ export const HeaderSlidesContainer = styled.div`
         flex-direction: column-reverse;
         padding: 30px 0px 50px 0px;
     }
-    @media screen and (width <= 500px) {
-    }
 `;
 
 export const FeaturesContainer = styled.section`

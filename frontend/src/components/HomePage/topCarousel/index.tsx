@@ -16,103 +16,102 @@ import Arrow_right from '@@/public/assets/home/arrow_right.png';
 import { HeaderSlidesContainer, SwiperContainer } from "@/components/homePage/styles";
 
 interface Props {
-    onButtonClicked: () => void;
+  onButtonClicked: () => void
 }
 
 export function TopSlides(props: Props) {
 
-    const slideElement: JSX.Element = <SwiperSlide className='h-full'>
-        <HeaderSlidesContainer>
-            <div className='w-full h-full flex items-center flex-row justify-center min-[1400px]:justify-end'>
-                <div className='flex flex-col items-start gap-y-9 justify-center max-[750px]:items-center max-[800px]:gap-y-5 max-[500px]:gap-y-5'>
-                    <h2 className='font-bold text-6xl text-white max-[1084px]:text-5xl max-[800px]:text-[37px] max-[750px]:text-center'>
-                        Compre agora, <br />
-                        surpreenda-se!
-                    </h2>
-                    <div className='flex flex-row justify-between items-center'>
-                        <div className='flex flex-col items-start justify-center pr-5 relative before:w-[1pt] before:h-[80%] before:bg-base-color before:absolute before:right-0 before:translate-x-2/4'>
-                            <p className='text-white text-xl font-semibold max-[900px]:text-lg max-[800px]:text-base max-[550px]:text-sm'>50+</p>
-                            <p className='font-normal text-[17px] text-white max-[900px]:text-sm'>Categorias de produtos</p>
-                        </div>
-                        <div className='flex flex-col items-start justify-center pl-5'>
-                            <p className='text-white text-xl font-semibold max-[900px]:text-lg max-[800px]:text-base max-[550px]:text-sm'>100M+</p>
-                            <p className='font-normal text-[17px] text-white max-[900px]:text-sm'>Clientes satisfeitos</p>
-                        </div>
-                    </div>
-                    <button onClick={props.onButtonClicked} className="btn bg-white text-primary w-52 hover:bg-white text-base outline-none max-[800px]:mt-3 max-[800px]:text-sm">Conferir ofertas</button>
-                </div>
+  const slideElement: JSX.Element = <SwiperSlide className='h-full'>
+    <HeaderSlidesContainer>
+      <div className='w-full h-full flex items-center flex-row justify-center min-[1400px]:justify-end'>
+        <div className='flex flex-col items-start gap-y-9 justify-center max-[750px]:items-center max-[800px]:gap-y-5 max-[500px]:gap-y-5'>
+          <h2 className='font-bold text-6xl text-white max-[1084px]:text-5xl max-[800px]:text-[37px] max-[750px]:text-center'>
+            Compre agora, <br />
+            surpreenda-se!
+          </h2>
+          <div className='flex flex-row justify-between items-center'>
+            <div className='flex flex-col items-start justify-center pr-5 relative before:w-[1pt] before:h-[80%] before:bg-base-color before:absolute before:right-0 before:translate-x-2/4'>
+              <p className='text-white text-xl font-semibold max-[900px]:text-lg max-[800px]:text-base max-[550px]:text-sm'>50+</p>
+              <p className='font-normal text-[17px] text-white max-[900px]:text-sm'>Categorias de produtos</p>
             </div>
-
-            <div className='w-full h-full flex items-end justify-center max-[900px]:justify-end max-[750px]:hidden min-[1400px]:justify-start'>
-                <Image
-                    src={Woman_model_1}
-                    alt={'white woman looking to the left'}
-                    height={500}
-                    width={600}
-                    className="w-auto h-full object-cover max-[800px]:h-[310px] max-[500px]:max-h-60"
-                />
+            <div className='flex flex-col items-start justify-center pl-5'>
+              <p className='text-white text-xl font-semibold max-[900px]:text-lg max-[800px]:text-base max-[550px]:text-sm'>100M+</p>
+              <p className='font-normal text-[17px] text-white max-[900px]:text-sm'>Clientes satisfeitos</p>
             </div>
-        </HeaderSlidesContainer>
-    </SwiperSlide>
+          </div>
+          <button onClick={props.onButtonClicked} className="btn bg-white text-primary w-52 hover:bg-white text-base outline-none max-[800px]:mt-3 max-[800px]:text-sm">Conferir ofertas</button>
+        </div>
+      </div>
 
-    return (
-        <SwiperContainer>
-            <Swiper
-                style={{
-                    width: '100%',
-                    zIndex: 5,
-                    borderRadius: '8px',
-                    overflow: 'hidden',
-                    boxSizing: 'border-box',
-                }}
+      <div className='w-full h-full flex items-end justify-center max-[900px]:justify-end max-[750px]:hidden min-[1400px]:justify-start'>
+        <Image
+          src={Woman_model_1}
+          alt={'white woman looking to the left'}
+          height={500}
+          width={600}
+          className="w-auto h-full object-cover max-[800px]:h-[310px] max-[500px]:max-h-60"
+        />
+      </div>
+    </HeaderSlidesContainer>
+  </SwiperSlide>
 
-                className="h-[430px] max-[900px]:h-96 max-[800px]:h-80 max-[750px]:h-auto"
+  return (
+    <SwiperContainer>
+      <Swiper
+        style={{
+          width: '100%',
+          zIndex: 5,
+          borderRadius: '8px',
+          overflow: 'hidden',
+          boxSizing: 'border-box',
+        }}
 
-                slidesPerView={1}
-                loop={true}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={{
-                    nextEl: '.btn-slide-next',
-                    prevEl: '.btn-slide-prev',
-                }}
+        className="h-[430px] max-[900px]:h-96 max-[800px]:h-80 max-[750px]:h-auto"
 
-                autoplay={{
-                    delay: 4000,
-                }}
+        slidesPerView={1}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={{
+          nextEl: '.btn-slide-next',
+          prevEl: '.btn-slide-prev',
+        }}
 
-                modules={[Pagination, Navigation, Autoplay]}
-                spaceBetween={0}
-            >
-                {slideElement}
-                {slideElement}
-                {slideElement}
-                {slideElement}
-            </Swiper>
+        autoplay={{
+          delay: 4000,
+        }}
 
-            <div className='w-full max-[800px]:hidden'>
-                <button className='btn-slide-prev w-[75px] h-[75px] flex justify-center items-center bg-base-color before:w-[65px] before:h-[65px] max-[900px]:before:w-14 max-[900px]:before:h-14 before:bg-secondary before:rounded-full before:absolute before:top-2/4 before:left-2/4 before:-translate-x-2/4 before:-translate-y-2/4 before:-z-10 absolute top-2/4 z-10 -translate-y-2/4 outline-none left-0 -translate-x-2/4 rounded-full max-[900px]:w-[66px] max-[900px]:h-[66px]'>
-                    <Image
-                        src={Arrow_left}
-                        alt={'arrow left picture'}
-                        width={500}
-                        height={500}
-                        className='w-[23px] h-auto object-cover max-[900px]:w-5'
-                    />
-                </button>
+        modules={[Pagination, Navigation, Autoplay]}
+        spaceBetween={0}
+      >
+        {slideElement}
+        {slideElement}
+        {slideElement}
+        {slideElement}
+      </Swiper>
 
-                <button className='btn-slide-next w-[75px] h-[75px] flex justify-center items-center bg-base-color before:w-[65px] before:h-[65px] max-[900px]:before:w-14 max-[900px]:before:h-14 before:bg-secondary before:rounded-full before:absolute before:top-2/4 before:left-2/4 before:-translate-x-2/4 before:-translate-y-2/4 before:-z-10 absolute top-2/4 z-10 -translate-y-2/4 outline-none right-0 translate-x-2/4 rounded-full max-[900px]:w-[66px] max-[900px]:h-[66px]'>
-                    <Image
-                        src={Arrow_right}
-                        alt={'arrow left picture'}
-                        width={500}
-                        height={500}
-                        className='w-[23px] h-auto object-cover max-[900px]:w-5'
-                    />
-                </button>
-            </div>
+      <div className='w-full max-[800px]:hidden'>
+        <button className='btn-slide-prev w-[75px] h-[75px] flex justify-center items-center bg-base-color before:w-[65px] before:h-[65px] max-[900px]:before:w-14 max-[900px]:before:h-14 before:bg-secondary before:rounded-full before:absolute before:top-2/4 before:left-2/4 before:-translate-x-2/4 before:-translate-y-2/4 before:-z-10 absolute top-2/4 z-10 -translate-y-2/4 outline-none left-0 -translate-x-2/4 rounded-full max-[900px]:w-[66px] max-[900px]:h-[66px]'>
+          <Image
+            src={Arrow_left}
+            alt={'arrow left picture'}
+            width={500}
+            height={500}
+            className='w-[23px] h-auto object-cover max-[900px]:w-5'
+          />
+        </button>
 
-        </SwiperContainer>
-    );
+        <button className='btn-slide-next w-[75px] h-[75px] flex justify-center items-center bg-base-color before:w-[65px] before:h-[65px] max-[900px]:before:w-14 max-[900px]:before:h-14 before:bg-secondary before:rounded-full before:absolute before:top-2/4 before:left-2/4 before:-translate-x-2/4 before:-translate-y-2/4 before:-z-10 absolute top-2/4 z-10 -translate-y-2/4 outline-none right-0 translate-x-2/4 rounded-full max-[900px]:w-[66px] max-[900px]:h-[66px]'>
+          <Image
+            src={Arrow_right}
+            alt={'arrow left picture'}
+            width={500}
+            height={500}
+            className='w-[23px] h-auto object-cover max-[900px]:w-5'
+          />
+        </button>
+      </div>
+    </SwiperContainer>
+  );
 };

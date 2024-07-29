@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { MutableRefObject, useRef, useEffect, useState } from 'react';
 
@@ -16,31 +16,35 @@ import { Footer } from '@/components/shared/footer';
 import * as Style from './styles';
 
 interface SectionTitleProps {
-    element1?: number;
-    element2?: number;
-    element3?: number;
-};
+  element1?: number
+  element2?: number
+  element3?: number
+}
 
 interface ProductProperties {
-    product_title?: string;
-    product_image?: string;
-    product_price?: number;
-    offer?: number,
-    vote_average?: number;
-    installments?: number;
-    installments_price?: number;
-    stock_status?: string;
-};
+  product_title?: string
+  product_image?: string
+  product_price?: number
+  offer?: number
+  vote_average?: number
+  installments?: number
+  installments_price?: number
+  stock_status?: string
+}
 
 export default function Home() {
-    const productSectionTitleRef: MutableRefObject<(HTMLHeadingElement | null)[]> = useRef([]);
-    const [sectionTitleWidth, setSectionTitleWidth] = useState<SectionTitleProps>({
-        element1: 0,
-        element2: 0,
-        element3: 0,
-    });
+  const productSectionTitleRef: MutableRefObject<
+    (HTMLHeadingElement | null)[]
+  > = useRef([])
+  const [sectionTitleWidth, setSectionTitleWidth] = useState<SectionTitleProps>(
+    {
+      element1: 0,
+      element2: 0,
+      element3: 0
+    }
+  )
 
-    const productOffersRef = useRef(null);
+  const productOffersRef = useRef(null)
 
     const scrollIntoView = (elRef: MutableRefObject<(HTMLElement | null)>): void => {
         elRef &&
@@ -49,36 +53,40 @@ export default function Home() {
             });
     };
 
-    const scrollToProductsOffers = (): void => {
-        scrollIntoView(productOffersRef);
-    };
+  const scrollToProductsOffers = (): void => {
+    scrollIntoView(productOffersRef)
+  }
 
-    const products: ProductProperties = {
-        product_title: 'Relógio Smartwatch Intense 3.0 ISW-003',
-        product_image: '/assets/home/smart_watch.png',
-        product_price: 79.95,
-        offer: 0.4,
-        vote_average: 1550,
-        installments: 12,
-        installments_price: 6.65,
-        stock_status: 'Em estoque',
-    };
+  const products: ProductProperties = {
+    product_title: 'Relógio Smartwatch Intense 3.0 ISW-003',
+    product_image: '/assets/home/smart_watch.png',
+    product_price: 79.95,
+    offer: 0.4,
+    vote_average: 1550,
+    installments: 12,
+    installments_price: 6.65,
+    stock_status: 'Em estoque'
+  }
 
-    useEffect(() => {
-        const getElementWidth = () => {
-            productSectionTitleRef.current ? (
-                setSectionTitleWidth(prevState => ({
-                    ...prevState,
-                    element1: productSectionTitleRef.current[0]?.offsetWidth ?? prevState.element1,
-                    element2: productSectionTitleRef.current[1]?.offsetWidth ?? prevState.element2,
-                    element3: productSectionTitleRef.current[2]?.offsetWidth ?? prevState.element3,
-                }))
-            ) : (
-                setTimeout(() => {
-                    getElementWidth()
-                }, 100)
-            )
-        };
+  useEffect(() => {
+    const getElementWidth = () => {
+      productSectionTitleRef.current
+        ? setSectionTitleWidth((prevState) => ({
+            ...prevState,
+            element1:
+              productSectionTitleRef.current[0]?.offsetWidth ??
+              prevState.element1,
+            element2:
+              productSectionTitleRef.current[1]?.offsetWidth ??
+              prevState.element2,
+            element3:
+              productSectionTitleRef.current[2]?.offsetWidth ??
+              prevState.element3
+          }))
+        : setTimeout(() => {
+            getElementWidth()
+          }, 100)
+    }
 
         getElementWidth();
     }, [productSectionTitleRef]);

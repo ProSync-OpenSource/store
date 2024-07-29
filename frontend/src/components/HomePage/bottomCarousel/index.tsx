@@ -1,15 +1,15 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay } from 'swiper/modules'
 
-import Smart_watch from '@@/public/assets/home/smart_watch.png';
+import Smart_watch from '@@/public/assets/home/smart_watch.png'
 
 import { SwiperContainer } from '@/components/homePage/styles';
 
-import '@@/node_modules/swiper/swiper.css';
-import '@@/node_modules/swiper/modules/pagination.css';
-import '@@/node_modules/swiper/modules/autoplay.css';
+import '@@/node_modules/swiper/swiper.css'
+import '@@/node_modules/swiper/swiper.css'
+import '@@/node_modules/swiper/modules/autoplay.css'
 
 export function BottomSlides() {
 
