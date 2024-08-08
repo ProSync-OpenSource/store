@@ -3,23 +3,16 @@ import { useState, useRef, MutableRefObject, useEffect } from "react";
 import * as Style from '@/app/styles';
 
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
+import { RiUserLine } from "react-icons/ri";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 
 import MobileMenu from './mobileMenu/index';
 import CategoryBar from './categoryBar/index';
 
-import { FaRegUser } from "react-icons/fa";
-
-export interface DropDownProps {
-    isDropDownActive?: boolean | undefined;
-    isOverlayActive?: boolean | undefined;
-}
-
 export function Header() {
     const menuInputsRef: MutableRefObject<(null[] | HTMLElement[])> = useRef([null, null]);
-    const [dropDownProps, setDropDownProps] = useState<DropDownProps>({
-        isDropDownActive: false,
-        isOverlayActive: false,
-    });
+    const [isOverlayActive, setIsOverlayActive] = useState(false);
 
     const handleMenuClick = (): void => {
         if (menuInputsRef.current) {
@@ -35,10 +28,9 @@ export function Header() {
                 <header className="w-full text-white flex flex-col justify-start items-center">
                     <Style.HeaderNavBar>
                         <div className="w-fit">
-                            <h1 className="text-white font-semibold text-[35px] flex items-baseline max-[800px]:hidden">ProSync</h1>
-                            <Style.MobileMenu htmlFor="my-drawer">
+                            <h1 className="text-white font-bold text-3xl flex items-baseline max-[800px]:hidden">ProSync</h1>
+                            <Style.MobileMenu htmlFor="my-drawer" className="hidden">
                                 <input type="checkbox" id="burger" ref={(e) => { menuInputsRef.current[1] = e }} />
-                                <label htmlFor="" className="" onClick={() => { handleMenuClick() }}></label>
                                 <span></span>
                                 <span></span>
                                 <span></span>
@@ -46,50 +38,45 @@ export function Header() {
 
                         </div>
                         <div className="w-full flex justify-center">
-                            <div className="w-full flex flex-row m-auto items-center gap-x-2 bg-gray-100 rounded-lg px-2 h-11">
-                                <FiSearch className="text-gray-800 text-xl" />
+                            <div className="w-full flex flex-row m-auto items-center gap-x-2 bg-gray-100 rounded-md px-2 h-11">
+                                <FiSearch className="text-gray-500 text-xl" />
                                 <input
-                                    className="w-full placeholder:text-gray-800 text-gray-900 bg-gray-100 font-normal text-lg outline-none max-[550px]:text-base"
+                                    className="w-full placeholder:text-gray-500 text-gray-900 bg-gray-100 font-medium text-lg outline-none max-[550px]:text-base"
                                     type="text"
                                     name=""
                                     id=""
-                                    placeholder="Procurando por algo ?"
+                                    placeholder="Buscar produtos"
                                 />
                             </div>
                         </div>
                         <nav>
-                            <ul className="w-full flex flex-row gap-x-5 items-center justify-end">
+                            <ul className="w-full flex flex-row gap-x-8 items-center justify-end ">
 
-                                <li className="flex flex-row items-center gap-x-2 max-[550px]:hidden">
-                                    <FaRegUser className="text-[20px] max-[800px]:cursor-pointer" />
-                                    <p className='text-lg font-semibold cursor-pointer max-[800px]:hidden'>Login</p>
+                                <li className="flex flex-row items-center gap-x-2 cursor-pointer max-[550px]:hidden">
+                                    <IoMdHeartEmpty className="text-2xl"/>
                                 </li>
 
-                                <li className="max-[980px]:hidden">
-                                    <p className='font-semibold text-lg'>/</p>
-                                </li>
-
-                                <li className="cursor-pointer  max-[980px]:hidden">
-                                    <p className='font-semibold text-lg'>Cadastro</p>
+                                <li className="max-[980px]:hidden cursor-pointer">
+                                    <FiShoppingCart className="text-xl max-[550px]:text-[23px]" />
                                 </li>
 
                                 <li className="max-[550px]:hidden">
-                                    <p className='font-semibold text-lg'>|</p>
+                                    <p className='text-2xl'>|</p>
                                 </li>
 
-                                <li className="relative cart-icon-box">
-                                    <FiShoppingCart className="text-[20px] cursor-pointer max-[550px]:text-[23px]" />
-                                    <p className='w-3 h-3 rounded-full bg-base-color absolute -top-2/4 -right-2/4 font-normal text-[8px] text-gray-900 flex items-center justify-center'>1</p>
+                                <li className="relative cart-icon-box flex cursor-pointer gap-x-1 items-center">
+                                    <RiUserLine className="text-[22px] max-[550px]:text-[23px] font-bold" />
+                                    <IoIosArrowDown/>
                                 </li>
                             </ul>
                         </nav>
                     </Style.HeaderNavBar>
 
-                    <div className="bg-base-color w-full py-4 px-14 flex justify-center items-center max-[900px]:hidden">
-                       <CategoryBar DropDownElements={setDropDownProps}/>
+                    <div className="bg-primary w-full px-10 flex justify-center items-center max-[900px]:hidden">
+                       <CategoryBar setOverlay={setIsOverlayActive} overlay={isOverlayActive}/>
                     </div>
 
-                    <Style.OverlayElement zIndex={dropDownProps.isDropDownActive ? 40 : -10} opacity={dropDownProps.isOverlayActive ? 0.3 : 0}></Style.OverlayElement>
+                    <Style.OverlayElement zIndex={isOverlayActive ? 40 : -10} opacity={isOverlayActive ? 0.3 : 0}></Style.OverlayElement>
                 </header>
             </div>
             <div className="drawer-side z-[250]">

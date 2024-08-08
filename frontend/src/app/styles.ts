@@ -5,7 +5,7 @@ export const Container = styled.div`
 `;
 
 export const FooterContainer = styled.footer`
-    width: calc(100% - 112px);
+    width: calc(100% - 80px);
     height: auto;
     margin: auto;
     display: grid;
@@ -29,7 +29,7 @@ export const HeaderNavBar = styled.div`
     width: 100%;
     background-color: #5D0C7B;
     z-index: 30;
-    padding: 24px 56px;
+    padding: 14px 40px 10px 40px;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
@@ -58,8 +58,8 @@ export const MobileMenu = styled.label`
     width: 25px;
     height: 18px;
     background: transparent;
-    cursor: pointer;
     display: none;
+    cursor: pointer;
     z-index: 300;
     & input {
         display: none;
@@ -105,9 +105,9 @@ export const MobileMenu = styled.label`
         left: 6px;
     }
 
-    @media screen and (width <= 800px) {
+    @media screen and (width <= 800) {
         display: block;
-    }
+    };
 `;
 
 
@@ -132,44 +132,9 @@ export const CategoryList = styled.ul`
     }
 `;
 
-interface ListItemProps {
-  zIndex?: number;
-};
-
-export const CategoryListItem = styled.li<ListItemProps>`
-    width: 170px;
-    position: relative;
-    cursor: pointer;
-    border-radius: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 8px;
-    height: 40px;
-    font-weight: 500;
-    background-color: #5D0C7B;
-    color: white;
-    z-index: 10;
-    @media screen and (width <= 900px) {
-        width: 150px;
-        height: 38px;
-    }
-    &:hover {
-        z-index: 50;
-    }
-    & .drop-down-menu {
-        max-height: 0px;
-        transition: max-height .1s ease-out;
-    }
-    &:hover .drop-down-menu {
-        max-height: 400px;
-    }
-`;
-
-
 interface OverlayProps {
-  zIndex?: number | undefined;
-  opacity?: number;
+    zIndex?: number | undefined;
+    opacity?: number;
 };
 
 export const OverlayElement = styled.div<OverlayProps>`
