@@ -13,9 +13,9 @@ export function Footer() {
   return (
     <FooterContainer>
       <div className="w-full order-1">
-        <h5 className="font-bold text-white text-4xl max-[900px]:text-3xl max-[550px]:text-2xl">ProSync</h5>
+        <h5 className="font-bold text-white text-3xl max-[900px]:text-3xl max-[550px]:text-2xl">ProSync</h5>
 
-        <div className="mt-8 flex flex-col justify-start items-start text-lg text-white font-bold gap-y-3 max-[550px]:gap-y-2 max-[550px]:text-base">
+        <div className="mt-8 flex flex-col justify-start items-start text-base text-white font-bold gap-y-3 max-[550px]:gap-y-2 max-[550px]:text-base">
           <p className="uppercase">Atendimento ao cliente</p>
           <p>SAC: <span className="font-normal">Serviço de Atendimento ao Consumidor</span></p>
           <p>E-mail: <span className="font-normal">suporte@prosync.com.br</span></p>
@@ -23,7 +23,7 @@ export function Footer() {
 
           <div className="w-full h-[2px] bg-orange-500 my-4 max-[550px]:h-[1px]"></div>
 
-          <div className="flex flex-col text-lg text-white font-normal justify-start items-start gap-y-3 max-[550px]:gap-y-2 max-[550px]:text-base">
+          <div className="flex flex-col text-base text-white font-normal justify-start items-start gap-y-3 max-[550px]:gap-y-2 max-[550px]:text-base">
             <p className="font-bold uppercase">Horario de Atendimento</p>
             <p>Seg a Sex: 09:00h ás 18:00h</p>
             <p>Sabados, Domingos e Feriados: 09:00h ás 13:00h</p>
@@ -32,7 +32,7 @@ export function Footer() {
       </div>
 
       <div className="w-full flex justify-center items-center order-2 max-[550px]:justify-start">
-        <div className="w-fit flex flex-col justify-center items-start gap-y-3 text-lg text-white font-normal max-[550px]:gap-y-2 max-[550px]:text-base">
+        <div className="w-fit flex flex-col justify-center items-start gap-y-3 text-base text-white font-normal max-[550px]:gap-y-2 max-[550px]:text-base">
           <p className="font-bold uppercase">Departamentos</p>
           <p>Mais vendidos</p>
           <p>Beleza & Elegancia</p>
@@ -44,7 +44,7 @@ export function Footer() {
       </div>
 
       <div className="w-full flex justify-center items-center order-3 max-[750px]:col-span-2 max-[550px]:justify-start max-[550px]:col-span-1">
-        <div className="w-fit flex flex-col justify-center items-start gap-y-3 text-lg text-white font-normal max-[550px]:gap-y-2 max-[550px]:text-base">
+        <div className="w-fit flex flex-col justify-center items-start gap-y-3 text-base text-white font-normal max-[550px]:gap-y-2 max-[550px]:text-base">
           <p className="font-bold uppercase">Contato</p>
           <p>Sobre nos - ProSync</p>
           <p>Trocas e Devoluções</p>
