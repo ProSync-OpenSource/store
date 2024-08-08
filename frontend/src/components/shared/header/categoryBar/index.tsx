@@ -2,7 +2,6 @@ import React, { SetStateAction, MutableRefObject, useRef, Dispatch, useContext }
 
 import { UserContext } from '@/components/contexts/userContext';
 
-import { CiLocationOn } from "react-icons/ci"
 import { IoIosArrowDown } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
 

@@ -23,6 +23,8 @@ export type UserProps = {
     zipCode?: string;
     isAllowed?: boolean;
     isAddressAvailable?: boolean;
+    fetchError?: boolean;
+    errorMessage?: string;
 };
 
 export default function UserLocation() {
@@ -34,9 +36,10 @@ export default function UserLocation() {
         isAllowed: false,
         zipCode: '',
         isAddressAvailable: false,
+        fetchError: false,
     });
 
-    const { handleSubmit, register, setValue, formState: { errors } } = useForm<FormProps>({
+    const { handleSubmit, register, setValue, setError ,formState: { errors } } = useForm<FormProps>({
         criteriaMode: 'all',
         mode: 'all',
         resolver: zodResolver(schemaForm),
@@ -57,6 +60,17 @@ export default function UserLocation() {
             user.isAddressAvailable &&
             checkboxInputRef.current.click();
     }, [user.isAddressAvailable]);
+
+    useEffect(() => {
+        user.fetchError ? (
+            setError( 'zipCode', {
+                type: 'manual',
+                message: user.errorMessage
+            })
+        ) : (
+            setError( 'zipCode', {} )
+        )
+    },[user.fetchError]);
 
     return (
         <>
@@ -79,11 +93,7 @@ export default function UserLocation() {
                                 <CiLocationOn className='text-4xl' />
                                 <p  onClick={() => {
                                         setValue('zipCode', ''),
-                                        setUser(() => ({
-                                            zipCode: '',
-                                            isAllowed: false,
-                                            isAddressAvailable: false
-                                        }))
+                                        setUser({})
                                     }}
                                     className='text-white font-medium text-sm text-left leading-tight whitespace-nowrap'>
                                         Incluir minha <br />
@@ -104,7 +114,7 @@ export default function UserLocation() {
                         <div className="relative">
                             <input
                                 {...register('zipCode')}
-                                className="outline-none bg-transparent w-full h-12 text-base text-gray-800 font-medium border-2 border-primary px-3 placeholder:text-gray-500 rounded-md"
+                                className="outline-none bg-transparent w-full h-12 text-base text-gray-800 font-medium border-2 px-3 border-primary placeholder:text-gray-500 rounded-md"
                                 type="text"
                                 placeholder="Digite seu CEP"
                                 maxLength={8}

@@ -14,7 +14,7 @@ export default function GetLocationData(props: Props) {
 
     useEffect(() => {
         fetchData();
-    },[props.zipCode]);
+    }, [props.zipCode]);
 
     const fetchData = async () => {
         try {
@@ -22,22 +22,36 @@ export default function GetLocationData(props: Props) {
             const data = await response.json();
             if (!data.erro) {
                 user.setUserAddress &&
-                user.setUserAddress(() => ({
-                    zipCode: data.cep ?? data.cep,
-                    city: data.localidade ?? data.cep,
-                    uf: data.uf ?? data.uf
-                }));
-
-                console.log(data);
+                    user.setUserAddress(() => ({
+                        zipCode: data.cep ?? null,
+                        city: data.localidade ?? null,
+                        uf: data.uf ?? null
+                    }));
 
                 props.setUserData &&
-                    props.setUserData( prev => ({
+                    props.setUserData(prev => ({
                         ...prev,
+                        fetchError: false,
                         isAddressAvailable: true
                     }));
+
+            } else {
+
+                props.setUserData &&
+                    props.setUserData(prev => ({
+                        ...prev,
+                        fetchError: true,
+                        errorMessage: 'CEP não encontrado'
+                    }))
             }
         } catch (error) {
             console.error(error);
+            props.setUserData &&
+                props.setUserData(prev => ({
+                    ...prev,
+                    fetchError: true,
+                    errorMessage: 'Erro na busca'
+                }))
         }
     };
 
