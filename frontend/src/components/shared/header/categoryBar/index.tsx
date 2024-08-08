@@ -1,109 +1,73 @@
-import * as Style from '@/app/styles';
+import React, { SetStateAction, MutableRefObject, useRef, Dispatch, useContext } from 'react';
 
-import React, { useState, useEffect, SetStateAction } from 'react';
+import { UserContext } from '@/components/contexts/userContext';
 
-import { DropDownProps } from '@/components/shared/header/index';
-
+import { CiLocationOn } from "react-icons/ci"
 import { IoIosArrowDown } from "react-icons/io";
-import { BiSolidUpArrow } from "react-icons/bi";
+import { FiMenu } from "react-icons/fi";
 
-interface DropDownElementProps {
-    isAnyDropDownActive: boolean,
-    isOverlayActive: boolean,
-};
+import Categories from './categories';
+import UserLocation from "../userLocation/index";
 
-interface Props {
-    DropDownElements?: React.Dispatch<SetStateAction<DropDownProps>>;
-};
+type Props = {
+    setOverlay?: Dispatch<SetStateAction<boolean>>,
+    overlay?: boolean,
+}
 
 export default function categoryBar(props: Props) {
+    const categoryMenuRef: MutableRefObject<(null | HTMLDivElement)> = useRef(null);
+    const user = useContext(UserContext);
 
-    const [isDropDownMenuActive, setIsDropDownMenuActive] = useState<DropDownElementProps>({
-        isAnyDropDownActive: false,
-        isOverlayActive: false,
-    });
-
-    useEffect(() => {
-        isDropDownMenuActive.isAnyDropDownActive ? (
-            !isDropDownMenuActive.isOverlayActive &&
-            props.DropDownElements &&
-            props.DropDownElements(() => ({
-                isDropDownActive: true,
-                isOverlayActive: true,
-            }))
-        ) : (
-            props.DropDownElements &&
-            props.DropDownElements((prev) => ({
-                ...prev,
-                isOverlayActive: false,
-            })),
-            setTimeout(() => {
-                props.DropDownElements &&
-                    props.DropDownElements((prev) => ({
-                        ...prev,
-                        isDropDownActive: false,
-                    }))
-            }, 100)
-        )
-
-    }, [isDropDownMenuActive.isAnyDropDownActive]);
-
-    const categoryItems = [
-        {
-            categoryName: 'Tecnologia',
-            subCategories: {
-                'Desktops & Laptops': 'none',
-                'Dispositivos moveis': 'none',
-                'Acessorios & AI': 'none',
-                'Software & Hardware': 'none',
-                'Laptops & Desktops': 'none',
-                'Celulares': 'none',
-                'AI & Acessorios': 'none',
-                'Hardware & Software': 'none',
-                'Smart Tvs': 'none',
-            }
-        }
-    ];
-
-    const categoryLinks = (items: Record<string, string>) => {
-        const itemsList: JSX.Element[] = [];
-        for (let key in items) {
-            itemsList.push(<li style={{ width: '100%' }} key={key} className='hover:text-white px-2 hover:bg-primary'>{key}</li>)
-        };
-        return itemsList;
-    };
-
-    const categoryBtn = (name: string, items: Record<string, string>) => {
-        return (
-            <Style.CategoryListItem
-                onMouseEnter={() => setIsDropDownMenuActive(prevState => ({ ...prevState, isAnyDropDownActive: true, }))}
-                onMouseLeave={() => setIsDropDownMenuActive(prevState => ({ ...prevState, isAnyDropDownActive: false }))}
-            >
-                <p className='h-5 leading-none text-[16px]'>{name}</p>
-                <IoIosArrowDown />
-                <div className='drop-down-menu absolute top-full z-40 left-0 min-w-full overflow-y-hidden max-[900px]:hidden'>
-                    <div className='bg-white mt-2 rounded-md py-2 px-1 relative'>
-                        <BiSolidUpArrow className="absolute top-0 left-5 text-white -translate-y-3/4" />
-                        
-                        <ul className='w-auto flex flex-col items-start justify-start gap-y-1 overflow-hidden *:text-gray-700 *:font-medium *:text-[15px] *:py-1 *:rounded-[4px] *:whitespace-nowrap'>
-                            {categoryLinks(items)}
-                        </ul>
-                    </div>
-                </div>
-            </Style.CategoryListItem>
-        );
+    const handleCategoryMenu = (isMenuActive: boolean) => {
+        categoryMenuRef.current &&
+            props.setOverlay ? (
+            isMenuActive ? (
+                props.setOverlay(true)
+            ) : (
+                props.setOverlay(false)
+            )
+        ) : null
     };
 
     return (
-        <nav className='w-full flex justify-center items-center'>
-            <Style.CategoryList>
-                {categoryBtn(categoryItems[0].categoryName, categoryItems[0].subCategories)}
-                {categoryBtn(categoryItems[0].categoryName, categoryItems[0].subCategories)}                
-                {categoryBtn(categoryItems[0].categoryName, categoryItems[0].subCategories)}                
-                {categoryBtn(categoryItems[0].categoryName, categoryItems[0].subCategories)}                
-                {categoryBtn(categoryItems[0].categoryName, categoryItems[0].subCategories)}                
-                {categoryBtn(categoryItems[0].categoryName, categoryItems[0].subCategories)}                
-            </Style.CategoryList>
-        </nav>
+        <div className='w-full flex flex-row items-center justify-between gap-x-12 my-2 overflow-x-hidden'>
+            
+            <div>
+                <UserLocation />
+            </div>
+            <nav className='w-fit flex'>
+                <div ref={categoryMenuRef} onMouseOver={() => handleCategoryMenu(true)} onMouseOut={() => handleCategoryMenu(false)} className="hover:z-50 flex justify-start">
+                    <div style={{ color: props.overlay ? '#5D0C7B' : 'white' }} className='hover:z-55 flex items-center text-base font-medium gap-x-3 hover:text-primary px-12'>
+                        <FiMenu className='text-xl' />
+                        Categorias
+                        <IoIosArrowDown style={{ transform: props.overlay ? 'rotate(180deg)' : 'rotate(0deg)' }} className='text-xl' />
+                    </div>
+
+                    <div style={{
+                        top: categoryMenuRef.current ? categoryMenuRef.current.offsetTop - 10 : 0,
+                        display: !categoryMenuRef.current ? 'none' : 'inline',
+                        width: categoryMenuRef.current ? categoryMenuRef.current.offsetWidth : 'auto',
+                    }}
+                        className='bg-white rounded-md w-fit h-auto pt-12 absolute top-12 overflow-hidden -z-10'
+                    >
+                        <Categories />
+                    </div>
+                </div>
+
+                <ul className='flex w-fit gap-x-12 text-base font-medium *:cursor-pointer items-center justify-start *:whitespace-nowrap box-border overflow-hidden'>
+                    <li>Frete Grátis</li>
+                    <li>Ofertas do Dia</li>
+                    <li>Moda e Acessorios</li>
+                    <li>Novidades</li>
+                    <li>Internacionais</li>
+                    <li>Tecnologia</li>
+                    <li>Minhas Compras</li>
+                    <li>Moveis e Limpeza</li>
+                    <li>Fitnees</li>
+                    <li>Top mais vendidos</li>
+                </ul>
+            </nav>
+
+        </div>
     );
 };
