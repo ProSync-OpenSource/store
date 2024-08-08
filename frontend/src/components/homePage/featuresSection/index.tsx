@@ -35,7 +35,7 @@ export function FeaturesSection() {
                 />
 
                 <div className="features-overlay">
-                    <h4 className="text-white font-semibold text-4xl max-[900px]:text-3xl max-[800px]:text-2xl">Esportes & Lazer</h4>
+                    <h4 className="text-white font-semibold text-3xl max-[900px]:text-3xl max-[800px]:text-2xl">Esportes & Lazer</h4>
                     <button className="rounded-sm w-36 h-8 bg-primary text-white uppercase font-normal text-sm outline-none max-[900px]:text-[13px] max-[900px]:w-32 max-[800px]:w-28 max-[800px]:text-xs max-[800px]:font-medium">Confira</button>
                 </div>
             </div>

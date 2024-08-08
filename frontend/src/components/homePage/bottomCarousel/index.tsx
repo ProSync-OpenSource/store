@@ -61,13 +61,14 @@ export function BottomSlides() {
                     overflow: 'hidden',
                     borderRadius: '8px',
                     boxSizing: 'border-box',
+                    overflowX: 'hidden'
                 }}
 
                 className='h-[300px] max-[800px]:h-[270px] max-[670px]:h-auto'
 
                 slidesPerView={1}
 
-                loop={false}
+                loop={true}
 
                 autoplay={{
                     delay: 4000,

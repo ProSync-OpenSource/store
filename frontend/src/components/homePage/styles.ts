@@ -9,12 +9,14 @@ export const ProductsSlideElement = styled.div`
     position: relative;
     border-radius: 8px;
     padding: 0px 8px;
-    background-color: #E5E7EB;
+    background-color: white;
     box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.25),
     -4px 0px 10px -5px rgba(0, 0, 0, 0.3);
+
     @media screen and (width <= 900px) {
         width: 215px;
     }
+
     @media screen and (width <= 550px) {
         width: 200px;
     }
@@ -31,9 +33,11 @@ export const HeaderSlidesContainer = styled.div`
     font-size: 18px;
     font-weight: 700;
     color: white;
+
     @media screen and (width >= 1400px) {
         column-gap: 100px;
     }
+
     @media screen and (width <= 750px) {
         flex-direction: column-reverse;
         padding: 30px 0px 50px 0px;
@@ -47,8 +51,9 @@ export const FeaturesContainer = styled.section`
     overflow: hidden;
     column-gap: 25px;
     row-gap: 12px;
-    width: calc(100% - 112px);
+    width: calc(100% - 80px);
     margin: auto;
+
     & .features-overlay {
         position: absolute;
         left: 0;
@@ -63,10 +68,12 @@ export const FeaturesContainer = styled.section`
         background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), transparent);
         height: 100%;
     }
+
     @media screen and (width <= 900px) {
         grid-template-rows: 200px 200px;
         width: calc(100% - 80px);
     }
+
     @media screen and (width <= 750px) {
         grid-template-columns: 1fr;
         grid-template-rows: 150px 150px 150px;
@@ -79,7 +86,7 @@ interface SectionTitleProps {
 }
 
 export const ProductsSectionTitleBox = styled.div<SectionTitleProps>`
-    width: calc(100% - 112px);
+    width: calc(100% - 80px);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -87,6 +94,7 @@ export const ProductsSectionTitleBox = styled.div<SectionTitleProps>`
     flex-wrap: wrap;
     margin: auto;
     position: relative;
+
     & ::before {
         content: '';
         position: absolute;
@@ -97,6 +105,7 @@ export const ProductsSectionTitleBox = styled.div<SectionTitleProps>`
         border-radius: 8px;
         background-color: #d1d5db;
     }
+
     & ::after {
         content: '';
         position: absolute;
@@ -108,9 +117,11 @@ export const ProductsSectionTitleBox = styled.div<SectionTitleProps>`
         background-color: #5D0C7B;
         transition: width .5s ease-out;
     }
+
     @media screen and (width <= 900px) {
         width: calc(100% - 80px);
     }
+
     @media screen and (width <= 700px) {
         width: calc(100% - 40px);
     }
@@ -121,22 +132,39 @@ export const HomeContainer = styled.section`
     overflow-x: hidden;
     box-sizing: border-box;
     background-color: #F7F0F6;
+
     & .swiper-pagination-bullet {
-        --swiper-pagination-bullet-inactive-color: white;
+        --swiper-pagination-bullet-inactive-color: #5D0C7B;
         --swiper-pagination-bullet-size: 8px;
     }
+
     & .swiper-pagination-bullet-active {
-        --swiper-pagination-color: white;
+        --swiper-pagination-color: #5D0C7B;
     }
 `;
 
 export const SwiperContainer = styled.section`
     position: relative;
-    margin: auto;
-    width: calc(100% - 112px);
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    & .swiper-controllers {
+        display: none;
+    }
+
+    &:hover .swiper-controllers {
+        display: block;
+    }
+
+    & .overlay {
+        background-image: linear-gradient(to top, #F7F0F6, transparent);
+    }
+
     @media screen and (width <= 900px) {
         width: calc(100% - 80px);
     }
+
     @media screen and (width <= 750px) {
         width: calc(100% - 40px);
     }
