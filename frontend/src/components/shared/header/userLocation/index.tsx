@@ -79,25 +79,25 @@ export default function UserLocation() {
                     {userData.userAddress?.city ?
                         <>
                             <div className='flex items-center'>
-                                <CiLocationOn className='text-4xl' />
+                                <CiLocationOn className='text-4xl max-[900px]:text-3xl' />
                                 <div onClick={() => {
                                         setValue('zipCode', ''),
                                         setUser({})
                                 }}>
                                     <p className='text-sm font-medium whitespace-nowrap'>Entregar em</p>
-                                    <p className='max-w-56 overflow-hidden text-base font-semibold flex flex-row items-center whitespace-nowrap'>{userData.userAddress.city} {userData.userAddress.uf} - {userData.userAddress.zipCode}</p>
+                                    <p className='max-w-56 overflow-hidden text-base font-semibold flex flex-row items-center whitespace-nowrap max-[900px]:text-base max-[750px]:text-sm'>{userData.userAddress.city} {userData.userAddress.uf} - {userData.userAddress.zipCode}</p>
                                 </div>
                             </div>
                         </> : <>
                             <div className="flex flex-row items-center">
-                                <CiLocationOn className='text-4xl' />
+                                <CiLocationOn className='text-4xl max-[900px]:text-2xl' />
                                 <p  onClick={() => {
                                         setValue('zipCode', ''),
                                         setUser({})
                                     }}
-                                    className='text-white font-medium text-sm text-left leading-tight whitespace-nowrap'>
+                                    className='text-white font-medium text-sm text-left leading-tight whitespace-nowrap max-[900px]:flex max-[900px]:items-center max-[900px]:gap-x-1'>
                                         Incluir minha <br />
-                                        <span className='text-lg font-bold'>Região</span>
+                                        <span className='text-lg font-bold max-[900px]:text-sm'>Região</span>
                                 </p>
                             </div>
                         </>}
@@ -106,12 +106,12 @@ export default function UserLocation() {
 
             <input ref={checkboxInputRef} type="checkbox" id="my_modal_6" className="modal-toggle" />
             <div className="modal" role="dialog">
-                <div className="w-[500px] rounded-md bg-white h-60 relative flex flex-col items-center justify-center gap-y-5 px-7">
+                <div className="w-fit rounded-md bg-white h-60 relative flex flex-col items-center justify-center gap-y-5 px-7 max-[620px]:w-[calc(100%-30px)]">
                     <h3 className="text-xl font-semibold text-black">Informe seu cep para proseguir</h3>
                     <form onSubmit={handleSubmit(handleFormSubmit)}
-                        className="flex flex-row w-full gap-x-5 items-start"
+                        className="w-full flex flex-row gap-x-5 items-start max-[620px]:flex-col max-[620px]:gap-y-3"
                     >
-                        <div className="relative">
+                        <div className="relative w-full">
                             <input
                                 {...register('zipCode')}
                                 className="outline-none bg-transparent w-full h-12 text-base text-gray-800 font-medium border-2 px-3 border-primary placeholder:text-gray-500 rounded-md"
@@ -120,14 +120,14 @@ export default function UserLocation() {
                                 maxLength={8}
                             />
                             {errors.zipCode?.message && (
-                                <p className="text-error font-medium text-sm absolute -bottom-6 left-0">{errors.zipCode.message}</p>
+                                <p className="text-error font-medium text-sm absolute -bottom-6 left-0 max-[620px]:static">{errors.zipCode.message}</p>
                             )}
                         </div>
-                        <button className="btn outline-none border-none bg-primary text-white w-52 h-12 rounded-md">Continuar</button>
+                        <button className="btn outline-none border-none bg-primary text-white w-52 h-12 rounded-md max-[620px]:w-full">Continuar</button>
                     </form>
                     <div className="absolute top-3 right-3">
 
-                        <label htmlFor="my_modal_6" className=""><IoIosClose className='text-4xl text-black cursor-pointer' /></label>
+                        <label htmlFor="my_modal_6" className=""><IoIosClose className='text-4xl text-black cursor-pointer max-[750px]:text-3xl' /></label>
                     </div>
                 </div>
             </div>
