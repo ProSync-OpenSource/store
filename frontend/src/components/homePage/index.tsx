@@ -3,17 +3,19 @@
 import { MutableRefObject, useRef, useEffect, useState } from 'react';
 
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
 import Shipping from '@@/public/assets/home/shipping_icon.png';
 import Box from '@@/public/assets/home/box_icon.png';
 
-import { ProductsModelOne } from './productsCarousel/modelOne/index';
-import { ProductsModelTwo } from './productsCarousel/modelTwo/index';
 import { TopSlides } from './topCarousel/index';
 import { Header } from '@/components/shared/header';
-import { FeaturesSection } from './featuresSection/index';
-import { BottomSlides } from './bottomCarousel/index';
-import { Footer } from '@/components/shared/footer';
+
+const BottomSlides = dynamic(() => import('./bottomCarousel/index'));
+const Footer = dynamic(() => import('@/components/shared/footer'));
+const FeaturesSection = dynamic(() => import('./featuresSection/index'));
+const ProductsModelTwo = dynamic(() => import('./productsCarousel/modelTwo/index'));
+const ProductsModelOne = dynamic(() => import('./productsCarousel/modelOne/index'));
 
 import * as Style from './styles';
 
@@ -98,59 +100,48 @@ export default function Home() {
         <Style.HomeContainer>
             <Header />
 
-            <div className='bg-primary relative w-full overflow-x-hidden max-[900px]:mt-5'>
+            <div className='bg-primary relative w-full overflow-x-hidden m-auto max-[800px]:mt-4 max-[800px]:bg-transparent'>
                 <TopSlides onButtonClicked={scrollToProductsOffers} />
             </div>
 
-            <div className='w-full bg-base-color pt-16 relative'>
-                <div style={{ width: 'calc(100% - 80px' }} className='bg-primary px-10 box-border rounded-md m-auto text-base flex gap-x-32 h-12 z-[26] items-center justify-center absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2'>
-                    <div className='w-full flex justify-end items-center gap-x-2'>
+            <div className='w-full bg-base-color pt-16 relative max-[1000px]:pt-20 max-w-[1480px] mx-auto max-[800px]:mt-5 max-[800px]:pt-0'>
+                <div className='w-[calc(100%-80px)] bg-primary px-10 box-border rounded-md mx-auto text-base flex gap-x-32 h-12 z-[26] items-center justify-center absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 max-[1000px]:flex-col max-[1000px]:h-auto max-[1000px]:bg-transparent max-[1000px]:gap-y-3 max-[1000px]:px-0 max-[800px]:translate-y-0 max-[800px]:static max-[800px]:translate-x-0 max-[750px]:w-[calc(100%-30px)] max-[800px]:mb-7 max-[750px]:text-sm'>
+                    <div className='w-full flex justify-end items-center bg-primary rounded-md gap-x-2 max-[1000px]:h-12 max-[1000px]:justify-center'>
                         <Image
                             src={Shipping}
                             alt={'delivery car icon'}
-                            className='w-9 h-auto object-cover'
+                            className='w-9 h-auto object-cover max-[900px]:w-8 max-[750px]:w-7 max-[550px]:w-6'
                         />
                         <p className='text-white whitespace-nowrap'><span className='font-semibold'>Frete Gratis</span> em milhares de produtos</p>
                     </div>
 
-                    <div className='bg-primary rounded-md whitespace-nowrap h-full w-full flex items-center justify-start gap-x-3'>
+                    <div className='bg-primary rounded-md whitespace-nowrap h-full w-full flex items-center justify-start gap-3 max-[1000px]:h-12 max-[1000px]:justify-center'>
                         <Image
                             src={Box}
                             alt={'product box icon'}
-                            className='w-9 h-auto object-cover'
+                            className='w-9 h-auto object-cover max-[900px]:w-8 max-[750px]:w-7 max-[550px]:w-6'
                         />
                         <p><span className='font-semibold'>Devoluções Gratis</span> sem complicações</p>
                     </div>
                 </div>
 
-                <Style.ProductsSectionTitleBox afterElementWidth={sectionTitleWidth.element1}>
-                    <h3 ref={(e) => { productSectionTitleRef.current[0] = e }} className='text-gray-900 relative font-semibold text-xl py-2 max-[900px]:text-[19px] max-[550px]:text-base'>Promoções selecionadas para você</h3>
-                    <p className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm'>Ver todos</p>
-                </Style.ProductsSectionTitleBox>
-
-                <div className='w-full relative px-3'>
+                <div className='w-full relative px-3 max-[750px]:px-0'>
                     <ProductsModelOne
                         productsData={products[0]}
                         navigation={{
                             nextEl: 'first-carousel-next',
                             prevEl: 'first-carousel-prev'
                         }}
+                        title='Promoções selecionadas para você'
                     />
                 </div>
             </div>
 
-            <div className=' bg-base-color mt-[30px] overflow-x-hidden'>
-                <Style.ProductsSectionTitleBox afterElementWidth={sectionTitleWidth.element3} ref={productOffersRef}>
-                    <h3 ref={(e) => { productSectionTitleRef.current[2] = e }} className='text-gray-900 relative font-semibold text-xl py-2 max-[900px]:text-[19px] max-[550px]:text-base'>Ofertas do dia</h3>
-                    <p className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm'>Ver todos</p>
-                </Style.ProductsSectionTitleBox>
-
-                <div className='w-full relative pr-3 pl-5 flex items-center'>
-                    <div className='w-96'>
-                        <ProductsModelTwo productsData={products[1]} />
-                    </div>
-                    <ProductsModelOne
-                        productsData={products[0]}
+            <div className=' bg-base-color mt-5 overflow-x-hidden max-w-[1480px] mx-auto'>
+                <div className='w-full relative flex items-center max-[940px]:flex-col'>
+                    <ProductsModelTwo
+                        productsData={products}
+                        title='Ofertas do Dia'
                         navigation={{
                             nextEl: 'second-carousel-next',
                             prevEl: 'second-carousel-prev'
@@ -159,48 +150,33 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className='w-full flex flex-col gap-y-8'>
-                <Style.ProductsSectionTitleBox afterElementWidth={sectionTitleWidth.element2}>
-                    <h3 ref={(e) => { productSectionTitleRef.current[1] = e }} className='text-gray-900 relative font-semibold text-xl top-0 py-2 max-[900px]:text-[19px] max-[550px]:text-base'>Confira os nossos destaques</h3>
-                    <p className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm'>Ver todos</p>
-                </Style.ProductsSectionTitleBox>
-
+            <div className='w-full flex flex-col mt-3 max-w-[1480px] m-auto'>
                 <FeaturesSection />
             </div>
 
-            <div className='w-full bg-base-color mt-[30px]'>
-                <Style.ProductsSectionTitleBox afterElementWidth={sectionTitleWidth.element3} ref={productOffersRef}>
-                    <h3 ref={(e) => { productSectionTitleRef.current[2] = e }} className='text-gray-900 relative font-semibold text-xl py-2 max-[900px]:text-[19px] max-[550px]:text-base'>Os melhores em som e imagem</h3>
-                    <p className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm'>Ver todos</p>
-                </Style.ProductsSectionTitleBox>
-
-                <div className='w-full relative px-3'>
+            <div className='w-full bg-base-color mt-7 max-w-[1480px] mx-auto'>
+                <div className='w-full relative px-3 max-[750px]:px-0'>
                     <ProductsModelOne
                         productsData={products[0]}
                         navigation={{
                             nextEl: 'third-carousel-next',
                             prevEl: 'third-carousel-prev'
                         }}
+                        title='Os melhores em som e imagem'
                     />
                 </div>
+
             </div>
 
-            <div className='w-full my-8 px-10 flex justify-start'>
+            <div className='w-full my-8 px-10 flex justify-start max-w-[1480px] mx-auto max-[750px]:px-[15px]'>
                 <BottomSlides />
             </div>
 
-            <div className=' bg-base-color mt-[30px] overflow-x-hidden'>
-                <Style.ProductsSectionTitleBox afterElementWidth={sectionTitleWidth.element3} ref={productOffersRef}>
-                    <h3 ref={(e) => { productSectionTitleRef.current[2] = e }} className='text-gray-900 relative font-semibold text-xl py-2 max-[900px]:text-[19px] max-[550px]:text-base'>Top produtos mais vendidos</h3>
-                    <p className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm'>Ver todos</p>
-                </Style.ProductsSectionTitleBox>
-
-                <div className='w-full relative pr-3 pl-5 flex items-center'>
-                    <div className='w-96'>
-                        <ProductsModelTwo productsData={products[1]} />
-                    </div>
-                    <ProductsModelOne
-                        productsData={products[0]}
+            <div className=' bg-base-color mt-4 overflow-x-hidden max-w-[1480px] mx-auto'>
+                <div className='w-full relative flex items-center max-[940px]:flex-col'>
+                    <ProductsModelTwo
+                        productsData={products}
+                        title='Top produtos mais vendidos'
                         navigation={{
                             nextEl: 'fourth-carousel-next',
                             prevEl: 'fourth-carousel-prev'

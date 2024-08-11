@@ -14,7 +14,7 @@ export default function mobileMenu() {
             <div className="w-full h-28 bg-primary flex items-center pl-4">
                 <div className="flex gap-x-3 items-center">
                     <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white">
-                        <FaRegUser className="text-black text-2xl" />
+                        <FaRegUser className="text-gray-800 text-2xl" />
                     </div>
 
                     <div>
@@ -27,7 +27,7 @@ export default function mobileMenu() {
             </div>
 
             <div className="pl-4">
-                <ul className="flex flex-col gap-y-1 text-black text-[15px] font-medium *:flex *:flex-row *:items-center">
+                <ul className="flex flex-col gap-y-1 text-gray-900 text-[15px] font-medium *:flex *:flex-row *:items-center">
                     <li>
                         <div className="w-12 h-12 rounded-full flex justify-center items-center"><GoHome className="text-xl" /></div>
                         Inicio
