@@ -2,10 +2,10 @@ import { useState, useRef, useEffect, MutableRefObject } from "react";
 
 import { FeaturesContainer, ProductsSectionTitleBox } from "@/components/homePage/styles";
 
-import Family_img from '@@/public/assets/home/family_img.jpg';
-import Kitchen_img from '@@/public/assets/home/kitchen_img.jpg';
-import Ball_img from '@@/public/assets/home/tennis_ball_img.jpg';
-import Woman_model_2 from '@@/public/assets/home/woman_model_2.jpg';
+import Family_img from 'public/assets/home/family_img.jpg';
+import Kitchen_img from 'public/assets/home/kitchen_img.jpg';
+import Ball_img from 'public/assets/home/tennis_ball_img.jpg';
+import Woman_model_2 from 'public/assets/home/woman_model_2.jpg';
 
 import Image from "next/image";
 

@@ -1,16 +1,16 @@
 import Image from "next/image";
 
-import '@@/node_modules/swiper/swiper.css';
-import '@@/node_modules/swiper/modules/pagination.css';
-import '@@/node_modules/swiper/modules/autoplay.css';
-import '@@/node_modules/swiper/modules/navigation.css';
+import 'node_modules/swiper/swiper.css';
+import 'node_modules/swiper/modules/pagination.css';
+import 'node_modules/swiper/modules/autoplay.css';
+import 'node_modules/swiper/modules/navigation.css';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 
-import Arrow_left from '@@/public/assets/home/arrow_left.png';
-import Arrow_right from '@@/public/assets/home/arrow_right.png';
-import Poster_1 from '@@/public/assets/home/poster_1.svg';
+import Arrow_left from 'public/assets/home/arrow_left.png';
+import Arrow_right from 'public/assets/home/arrow_right.png';
+import Poster_1 from 'public/assets/home/poster_1.svg';
 
 import { SwiperContainer } from "@/components/homePage/styles";
 
@@ -87,7 +87,6 @@ export function TopSlides(props: Props) {
           />
         </button>
       </div>
-status
       <div className="overlay absolute w-full h-24 bottom-0 left-0 z-20 max-[800px]:hidden"></div>
     </SwiperContainer>
   );

@@ -5,10 +5,10 @@ import { Pagination, Autoplay } from 'swiper/modules';
 
 import { useRef, MutableRefObject, useState, useEffect } from 'react';
 
-import '@@/node_modules/swiper/swiper.css';
-import '@@/node_modules/swiper/modules/pagination.css';
-import '@@/node_modules/swiper/modules/autoplay.css';
-import '@@/node_modules/swiper/modules/navigation.css';
+import 'node_modules/swiper/swiper.css';
+import 'node_modules/swiper/modules/pagination.css';
+import 'node_modules/swiper/modules/autoplay.css';
+import 'node_modules/swiper/modules/navigation.css';
 
 import { ProductsSectionTitleBox, SwiperContainer } from '@/components/homePage/styles';
 import ProductsModelOne from '@/components/homePage/productsCarousel/modelOne/index';

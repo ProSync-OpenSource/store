@@ -5,8 +5,8 @@ import { MutableRefObject, useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-import Shipping from '@@/public/assets/home/shipping_icon.png';
-import Box from '@@/public/assets/home/box_icon.png';
+import Shipping from 'public/assets/home/shipping_icon.png';
+import Box from 'public/assets/home/box_icon.png';
 
 import { TopSlides } from './topCarousel/index';
 import { Header } from '@/components/shared/header';
@@ -104,7 +104,7 @@ export default function Home() {
                 <TopSlides onButtonClicked={scrollToProductsOffers} />
             </div>
 
-            <div className='w-full bg-base-color pt-16 relative max-[1000px]:pt-20 max-w-[1480px] mx-auto max-[800px]:mt-5 max-[800px]:pt-0'>
+            <div className='w-full bg-base-color pt-16 relative max-[1000px]:pt-20 max-w-[1480px] mx-auto max-[750px]:mt-4 max-[800px]:pt-0'>
                 <div className='w-[calc(100%-80px)] bg-primary px-10 box-border rounded-md mx-auto text-base flex gap-x-32 h-12 z-[26] items-center justify-center absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 max-[1000px]:flex-col max-[1000px]:h-auto max-[1000px]:bg-transparent max-[1000px]:gap-y-3 max-[1000px]:px-0 max-[800px]:translate-y-0 max-[800px]:static max-[800px]:translate-x-0 max-[750px]:w-[calc(100%-30px)] max-[800px]:mb-7 max-[750px]:text-sm'>
                     <div className='w-full flex justify-end items-center bg-primary rounded-md gap-x-2 max-[1000px]:h-12 max-[1000px]:justify-center'>
                         <Image

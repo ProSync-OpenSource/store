@@ -155,26 +155,13 @@ export const SwiperContainer = styled.section`
         background-image: linear-gradient(to top, #F7F0F6, transparent);
     }
 
-    & .custom-swiper-pagination {
-        display: none;
-        z-index: 10;
-        bottom: 8%;
-        position: absolute;
-        justify-content: center;
+    & .swiper-pagination {
+        display: none !important;
     }
 
     & .second-products-swiper {
         background-color: white;
         box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.25),-4px 0px 10px -5px rgba(0, 0, 0, 0.3);
-    }
-
-    & .second-custom-pagination {
-        display: flex;
-    }
-
-    & .second-custom-pagination .swiper-pagination-bullet-active {
-        background: red !important;
-        color: red !important;
     }
 
     & .swiper-pagination-bullet, .swiper-pagination-bullet-active {
@@ -198,10 +185,6 @@ export const SwiperContainer = styled.section`
     @media screen and (width <= 750px) {
         & .products-swiper {
             padding: 25px 15px !important;
-        }
-
-        .custom-swiper-pagination {
-            display: flex;
         }
 
         & .swiper-pagination {

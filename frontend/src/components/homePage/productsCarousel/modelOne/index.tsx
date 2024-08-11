@@ -5,19 +5,19 @@ import { useRef, MutableRefObject, useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa'
 import { IoIosAdd } from "react-icons/io";
 
-import Arrow_left from '@@/public/assets/home/arrow_left.png';
-import Arrow_right from '@@/public/assets/home/arrow_right.png';
-import Shipping_icon from '@@/public/assets/home/shipping_2.png'
+import Arrow_left from 'public/assets/home/arrow_left.png';
+import Arrow_right from 'public/assets/home/arrow_right.png';
+import Shipping_icon from 'public/assets/home/shipping_2.png'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
 import { ProductsSectionTitleBox } from '@/components/homePage/styles';
 
-import '@@/node_modules/swiper/swiper.css';
-import '@@/node_modules/swiper/modules/pagination.css';
-import '@@/node_modules/swiper/modules/autoplay.css';
-import '@@/node_modules/swiper/modules/navigation.css';
+import 'node_modules/swiper/swiper.css';
+import 'node_modules/swiper/modules/pagination.css';
+import 'node_modules/swiper/modules/autoplay.css';
+import 'node_modules/swiper/modules/navigation.css';
 
 import { ProductsSlideElement, SwiperContainer } from '@/components/homePage/styles';
 
