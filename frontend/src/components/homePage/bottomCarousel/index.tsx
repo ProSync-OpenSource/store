@@ -11,7 +11,7 @@ import '@@/node_modules/swiper/swiper.css'
 import '@@/node_modules/swiper/swiper.css'
 import '@@/node_modules/swiper/modules/autoplay.css'
 
-export function BottomSlides() {
+export default function BottomSlides() {
 
     const slideElement: JSX.Element = <SwiperSlide>
         <div className=' w-full h-full relative grid grid-cols-2 bg-primary gap-y-3 max-[670px]:grid-cols-1 max-[670px]:pb-12 max-[670px]:pt-4 min-[1400px]:gap-x-28'>

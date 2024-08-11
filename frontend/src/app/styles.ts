@@ -7,6 +7,8 @@ export const Container = styled.div`
 export const FooterContainer = styled.footer`
     width: calc(100% - 80px);
     height: auto;
+    max-width: 1400px;
+    margin: auto;
     margin: auto;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -15,7 +17,7 @@ export const FooterContainer = styled.footer`
         width: calc(100% - 80px);
     }
     @media screen and (width <= 750px) {
-        width: calc(100% - 40px);
+        width: calc(100% - 30px);
         grid-template-columns: auto auto;
         row-gap: 30px;
     }
@@ -27,7 +29,8 @@ export const FooterContainer = styled.footer`
 
 export const HeaderNavBar = styled.div`
     width: 100%;
-    background-color: #5D0C7B;
+    max-width: 1400px;
+    margin: auto;
     z-index: 30;
     padding: 14px 40px 10px 40px;
     display: grid;
@@ -36,80 +39,22 @@ export const HeaderNavBar = styled.div`
     column-gap: 48px;
     row-gap: 4px;
     
-    @media screen and (width <= 980px) {
+    @media screen and (width <= 1000px) {
         column-gap: 38px;
     }
     @media screen and (width <= 900px) {
-        padding: 24px 40px;
+        padding: 24px 40px 10px 40px;
     }
     @media screen and (width <= 800px) {
         column-gap: 38px;
     }
     @media screen and (width <= 750px) {
-        padding: 24px 20px;
+        padding: 24px 15px 10px 15px;
     }
     @media screen and (width <= 550px) {
         column-gap: 30px;
     }
 `;
-
-export const MobileMenu = styled.label`
-    position: relative;
-    width: 25px;
-    height: 18px;
-    background: transparent;
-    display: none;
-    cursor: pointer;
-    z-index: 300;
-    & input {
-        display: none;
-    }
-    & span {
-        display: block;
-        position: absolute;
-        height: 2px;
-        width: 100%;
-        background-color: #F7F0F6;
-        border-radius: 5px;
-        opacity: 1;
-        left: 0;
-        transform: rotate(0deg);
-        transition: .25s ease-in-out;
-    }
-    & span:nth-of-type(1) {
-        top: 0px;
-        transform-origin: left center;
-    }
-    & span:nth-of-type(2) {
-        top: 50%;
-        transform: translateY(-50%);
-        transform-origin: left center;
-    }
-    & span:nth-of-type(3) {
-        top: 100%;
-        transform-origin: left center;
-        transform: translateY(-100%);
-    }
-    & input:checked ~ span:nth-of-type(1) {
-        transform: rotate(45deg);
-        top: 0px;
-        left: 6px;
-    }
-    & input:checked ~ span:nth-of-type(2) {
-        width: 0%;
-        opacity: 0;
-    }
-    & input:checked ~ span:nth-of-type(3) {
-        transform: rotate(-45deg);
-        top: 18px;
-        left: 6px;
-    }
-
-    @media screen and (width <= 800) {
-        display: block;
-    };
-`;
-
 
 export const CategoryList = styled.ul`
     box-sizing: border-box;

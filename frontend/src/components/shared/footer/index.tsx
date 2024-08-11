@@ -9,7 +9,7 @@ import Mastercard from '@@/public/assets/shared/mastercard.png';
 import Pix from '@@/public/assets/shared/pix_img.png';
 import Visa_card from '@@/public/assets/shared/visa_card.png';
 
-export function Footer() {
+export default function Footer() {
   return (
     <FooterContainer>
       <div className="w-full order-1">

@@ -15,6 +15,8 @@ export const ProductsSlideElement = styled.div`
 
     @media screen and (width <= 900px) {
         width: 215px;
+        box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.25),
+    -4px 0px 10px -5px rgba(0, 0, 0, 0.3);
     }
 
     @media screen and (width <= 550px) {
@@ -51,8 +53,8 @@ export const FeaturesContainer = styled.section`
     overflow: hidden;
     column-gap: 25px;
     row-gap: 12px;
-    width: calc(100% - 80px);
-    margin: auto;
+    width: 100%;
+    margin: 25px auto 0px auto;
 
     & .features-overlay {
         position: absolute;
@@ -71,13 +73,11 @@ export const FeaturesContainer = styled.section`
 
     @media screen and (width <= 900px) {
         grid-template-rows: 200px 200px;
-        width: calc(100% - 80px);
     }
 
     @media screen and (width <= 750px) {
         grid-template-columns: 1fr;
         grid-template-rows: 150px 150px 150px;
-        width: calc(100% - 40px);
     }
 `;
 
@@ -86,7 +86,7 @@ interface SectionTitleProps {
 }
 
 export const ProductsSectionTitleBox = styled.div<SectionTitleProps>`
-    width: calc(100% - 80px);
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -95,7 +95,7 @@ export const ProductsSectionTitleBox = styled.div<SectionTitleProps>`
     margin: auto;
     position: relative;
 
-    & ::before {
+    &::before {
         content: '';
         position: absolute;
         bottom: 0;
@@ -106,7 +106,7 @@ export const ProductsSectionTitleBox = styled.div<SectionTitleProps>`
         background-color: #d1d5db;
     }
 
-    & ::after {
+    &::after {
         content: '';
         position: absolute;
         bottom: 0;
@@ -116,14 +116,16 @@ export const ProductsSectionTitleBox = styled.div<SectionTitleProps>`
         border-radius: 8px;
         background-color: #5D0C7B;
         transition: width .5s ease-out;
-    }
+    };
 
-    @media screen and (width <= 900px) {
-        width: calc(100% - 80px);
-    }
+    @media screen and (width <= 550px) {
+        &::after {
+            height: 1.5pt;
+        }
 
-    @media screen and (width <= 700px) {
-        width: calc(100% - 40px);
+        &::before {
+            height: 1.5pt;
+        }
     }
 `;
 
@@ -133,14 +135,6 @@ export const HomeContainer = styled.section`
     box-sizing: border-box;
     background-color: #F7F0F6;
 
-    & .swiper-pagination-bullet {
-        --swiper-pagination-bullet-inactive-color: #5D0C7B;
-        --swiper-pagination-bullet-size: 8px;
-    }
-
-    & .swiper-pagination-bullet-active {
-        --swiper-pagination-color: #5D0C7B;
-    }
 `;
 
 export const SwiperContainer = styled.section`
@@ -161,11 +155,63 @@ export const SwiperContainer = styled.section`
         background-image: linear-gradient(to top, #F7F0F6, transparent);
     }
 
-    @media screen and (width <= 900px) {
-        width: calc(100% - 80px);
+    & .custom-swiper-pagination {
+        display: none;
+        z-index: 10;
+        bottom: 8%;
+        position: absolute;
+        justify-content: center;
+    }
+
+    & .second-products-swiper {
+        background-color: white;
+        box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.25),-4px 0px 10px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    & .second-custom-pagination {
+        display: flex;
+    }
+
+    & .second-custom-pagination .swiper-pagination-bullet-active {
+        background: red !important;
+        color: red !important;
+    }
+
+    & .swiper-pagination-bullet, .swiper-pagination-bullet-active {
+        --swiper-pagination-bullet-size: 8px;
+        --swiper-pagination-color: white;
+        --swiper-pagination-bullet-inactive-color: white;
+    }
+
+    & .second-products-swiper .swiper-pagination-bullet, .second-products-swiper .swiper-pagination-bullet-active {
+        --swiper-pagination-bullet-size: 8px;
+        --swiper-pagination-color: #5D0C7B;
+        --swiper-pagination-bullet-inactive-color: #D4AAEF;
+    }
+
+    @media screen and (width <= 940px) {
+        & .second-products-swiper {
+            box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.25),-4px 0px 10px -5px rgba(0, 0, 0, 0.3);
+        }
     }
 
     @media screen and (width <= 750px) {
-        width: calc(100% - 40px);
-    }
+        & .products-swiper {
+            padding: 25px 15px !important;
+        }
+
+        .custom-swiper-pagination {
+            display: flex;
+        }
+
+        & .swiper-pagination {
+            display: block !important;
+        };
+    }    
+
+    @media screen and (width <= 800px) {
+        .swiper-controllers {
+            display: none !important;
+        }
+    }    
 `;

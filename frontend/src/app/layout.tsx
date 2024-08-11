@@ -3,6 +3,7 @@ import './globals.css'
 import StyledComponentsRegistry from '@/lib/registry'
 
 import { UserProvider } from '@/components/contexts/userContext';
+import { GlobalProvider } from '@/components/contexts/globalContext';
 
 import montserrat from './fonts/index';
 
@@ -22,7 +23,9 @@ export default function RootLayout({
         {' '}
         <StyledComponentsRegistry>
           <UserProvider>
-            {children}
+            <GlobalProvider>
+              {children}
+            </GlobalProvider>
           </UserProvider>
         </StyledComponentsRegistry>{' '}
       </body>
