@@ -68,7 +68,7 @@ export function Header() {
                         </nav>
                     </Style.HeaderNavBar>
 
-                    <div className="bg-primary w-full px-10 flex justify-center items-center max-w-[1400px] max-[900px]:px-[15px]">
+                    <div className="bg-primary w-full px-10 flex justify-center items-center max-w-[1400px] max-[750px]:px-[15px]">
                         <CategoryBar />
                     </div>
 

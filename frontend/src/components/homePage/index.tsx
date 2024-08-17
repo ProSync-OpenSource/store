@@ -100,26 +100,26 @@ export default function Home() {
         <Style.HomeContainer>
             <Header />
 
-            <div className='bg-primary relative w-full overflow-x-hidden m-auto max-[800px]:mt-4 max-[800px]:bg-transparent'>
+            <div className='bg-primary relative w-full overflow-x-visible m-auto max-[800px]:bg-transparent max-[800px]:mt-[10px]'>
                 <TopSlides onButtonClicked={scrollToProductsOffers} />
             </div>
 
-            <div className='w-full bg-base-color pt-16 relative max-[1000px]:pt-20 max-w-[1480px] mx-auto max-[750px]:mt-4 max-[800px]:pt-0'>
-                <div className='w-[calc(100%-80px)] bg-primary px-10 box-border rounded-md mx-auto text-base flex gap-x-32 h-12 z-[26] items-center justify-center absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 max-[1000px]:flex-col max-[1000px]:h-auto max-[1000px]:bg-transparent max-[1000px]:gap-y-3 max-[1000px]:px-0 max-[800px]:translate-y-0 max-[800px]:static max-[800px]:translate-x-0 max-[750px]:w-[calc(100%-30px)] max-[800px]:mb-7 max-[750px]:text-sm'>
+            <div className='w-full bg-base-color pt-16 relative max-[1000px]:pt-20 max-w-[1480px] mx-auto max-[800px]:pt-0 max-[800px]:mt-[10px]'>
+                <div className='w-[calc(100%-80px)] bg-primary px-10 box-border rounded-md mx-auto text-base flex gap-x-32 h-12 z-[26] items-center justify-center absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 max-[1000px]:flex-col max-[1000px]:h-auto max-[1000px]:bg-transparent max-[1000px]:gap-y-[10px] max-[1000px]:px-0 max-[800px]:translate-y-0 max-[800px]:static max-[800px]:translate-x-0 max-[750px]:w-[calc(100%-30px)] max-[800px]:mb-7 max-[750px]:text-sm'>
                     <div className='w-full flex justify-end items-center bg-primary rounded-md gap-x-2 max-[1000px]:h-12 max-[1000px]:justify-center'>
                         <Image
                             src={Shipping}
                             alt={'delivery car icon'}
-                            className='w-9 h-auto object-cover max-[900px]:w-8 max-[750px]:w-7 max-[550px]:w-6'
+                            className='w-9 h-auto object-cover max-[900px]:w-8 max-[800px]:w-7 max-[550px]:w-6'
                         />
                         <p className='text-white whitespace-nowrap'><span className='font-semibold'>Frete Gratis</span> em milhares de produtos</p>
                     </div>
 
-                    <div className='bg-primary rounded-md whitespace-nowrap h-full w-full flex items-center justify-start gap-3 max-[1000px]:h-12 max-[1000px]:justify-center'>
+                    <div className='bg-primary rounded-md whitespace-nowrap h-full w-full flex items-center justify-start gap-3 max-[750px]:h-12 max-[750px]:justify-center max-[1000px]:hidden max-[750px]:flex'>
                         <Image
                             src={Box}
                             alt={'product box icon'}
-                            className='w-9 h-auto object-cover max-[900px]:w-8 max-[750px]:w-7 max-[550px]:w-6'
+                            className='w-9 h-auto object-cover max-[900px]:w-8 max-[800px]:w-7 max-[550px]:w-6'
                         />
                         <p><span className='font-semibold'>Devoluções Gratis</span> sem complicações</p>
                     </div>

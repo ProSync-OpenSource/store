@@ -85,7 +85,7 @@ export default function UserLocation() {
                                         setUser({})
                                 }}>
                                     <p className='text-sm font-medium whitespace-nowrap'>Entregar em</p>
-                                    <p className='max-w-56 overflow-hidden text-base font-semibold flex flex-row items-center whitespace-nowrap max-[900px]:text-base max-[750px]:text-sm'>{userData.userAddress.city} {userData.userAddress.uf} - {userData.userAddress.zipCode}</p>
+                                    <p className='max-w-56 overflow-hidden text-base font-semibold flex flex-row items-center whitespace-nowrap max-[900px]:text-base max-[900px]:max-w-full max-[750px]:text-sm'>{userData.userAddress.city} {userData.userAddress.uf} - {userData.userAddress.zipCode}</p>
                                 </div>
                             </div>
                         </> : <>
@@ -106,7 +106,7 @@ export default function UserLocation() {
 
             <input ref={checkboxInputRef} type="checkbox" id="my_modal_6" className="modal-toggle" />
             <div className="modal" role="dialog">
-                <div className="w-fit rounded-md bg-white h-60 relative flex flex-col items-center justify-center gap-y-5 px-7 max-[620px]:w-[calc(100%-30px)]">
+                <div className="w-fit max-w-[calc(100%-30px)] box-border rounded-md bg-white h-60 relative flex flex-col items-center justify-center gap-y-5 px-7">
                     <h3 className="text-xl font-semibold text-black">Informe seu cep para proseguir</h3>
                     <form onSubmit={handleSubmit(handleFormSubmit)}
                         className="w-full flex flex-row gap-x-5 items-start max-[620px]:flex-col max-[620px]:gap-y-3"

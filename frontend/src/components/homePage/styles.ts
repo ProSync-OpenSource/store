@@ -155,7 +155,7 @@ export const SwiperContainer = styled.section`
         background-image: linear-gradient(to top, #F7F0F6, transparent);
     }
 
-    & .swiper-pagination {
+    & .top-slides .swiper-pagination {
         display: none !important;
     }
 
@@ -182,19 +182,28 @@ export const SwiperContainer = styled.section`
         }
     }
 
+    @media screen and (width <= 800px) {
+        .swiper-controllers {
+            display: none !important;
+        }
+
+        .top-slides {
+            width: calc(100% - 80px);
+        }
+
+        .top-slides .swiper-pagination {
+            display: block !important;
+        };
+
+    }  
+
     @media screen and (width <= 750px) {
         & .products-swiper {
             padding: 25px 15px !important;
         }
 
-        & .swiper-pagination {
-            display: block !important;
-        };
-    }    
-
-    @media screen and (width <= 800px) {
-        .swiper-controllers {
-            display: none !important;
+        .top-slides {
+            width: calc(100% - 53px);
         }
-    }    
+    }      
 `;
