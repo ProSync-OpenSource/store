@@ -82,7 +82,7 @@ export const FeaturesContainer = styled.section`
 `;
 
 interface SectionTitleProps {
-    afterElementWidth?: number;
+    afterelementwidth?: number | undefined;
 }
 
 export const ProductsSectionTitleBox = styled.div<SectionTitleProps>`
@@ -111,7 +111,7 @@ export const ProductsSectionTitleBox = styled.div<SectionTitleProps>`
         position: absolute;
         bottom: 0;
         left: 0;
-        width: ${(props) => props.afterElementWidth}px;
+        width: ${(props) => props.afterelementwidth || 0}px;
         height: 2pt;
         border-radius: 8px;
         background-color: #5D0C7B;

@@ -72,7 +72,7 @@ export function Header() {
                         <CategoryBar />
                     </div>
 
-                    <Style.OverlayElement zIndex={global.menuController?.isOverlayActive ? 40 : -10} opacity={global.menuController?.isOverlayActive ? 0.3 : 0}></Style.OverlayElement>
+                    <Style.OverlayElement zindex={global.menuController?.isOverlayActive ? 40 : -10} opacity={global.menuController?.isOverlayActive ? 0.3 : 0}></Style.OverlayElement>
                 </header>
             </div>
             <div className="drawer-side z-[250]">

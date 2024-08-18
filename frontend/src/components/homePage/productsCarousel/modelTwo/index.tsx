@@ -52,9 +52,9 @@ export default function ProductsModelTwo(props: SwiperProps) {
 
             <div className='w-full px-10 max-[750px]:px-[15px] max-[750px]:mb-4'>
                 {props.title ? (
-                    <ProductsSectionTitleBox afterElementWidth={sectionTitleWidth}>
+                    <ProductsSectionTitleBox afterelementwidth={sectionTitleWidth}>
                         <h3 ref={sectionTitleRef} className='text-gray-900 relative font-semibold text-xl py-2 max-[900px]:text-lg max-[550px]:text-base'>{props.title}</h3>
-                        <p className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm max-[550px]:hidden'>Ver todos</p>
+                        <p className='text-gray-900 font-semibold text-base cursor-pointer leading-none max-[550px]:text-sm max-[550px]:hidden'>Ver todos</p>
                     </ProductsSectionTitleBox>
                 ) : null}
             </div>

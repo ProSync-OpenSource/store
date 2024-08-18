@@ -27,22 +27,22 @@ export default function BottomSlides() {
         alt: 'Texto ao lado da imagem de um homem em frente a tela do computador'
     }]
 
-    const slideElement: JSX.Element = <SwiperSlide>
-        {slideImages.map( image => (
-            <Image
-                src={image.img}
-                alt={image.alt}
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit:'cover',
-                }}
+    const slideElement: JSX.Element[] =
+        slideImages.map( (image, index) => (
+            <SwiperSlide key={index}>
+                <Image
+                    src={image.img}
+                    alt={image.alt}
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit:'cover',
+                    }}
 
-                className='min-[750px]:object-left max-[749px]:object-bottom'
-            />
-        ))};
-    </SwiperSlide>
-
+                    className='min-[750px]:object-left max-[749px]:object-bottom'
+                />
+            </SwiperSlide>
+        ));
     return (
         <SwiperContainer>
             <Swiper

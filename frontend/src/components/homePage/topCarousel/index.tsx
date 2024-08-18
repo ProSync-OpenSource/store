@@ -59,8 +59,8 @@ export function TopSlides(props: Props) {
   }]
 
   const slides: JSX.Element[] =
-    slideImages.map(image => (
-      <SwiperSlide key={image.alt} className="slides">
+    slideImages.map((image, index) => (
+      <SwiperSlide key={index} className="slides">
         <Image
           src={image.img}
           alt={image.alt}

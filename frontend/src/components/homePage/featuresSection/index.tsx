@@ -21,9 +21,8 @@ export default function FeaturesSection() {
     return (
         <div className="px-10 max-[750px]:px-[15px]">
 
-            <ProductsSectionTitleBox afterElementWidth={sectionTitleWidth}>
+            <ProductsSectionTitleBox afterelementwidth={sectionTitleWidth}>
                 <h3 ref={sectionTitleRef} className='text-gray-900 relative font-semibold text-xl top-0 py-2 max-[900px]:text-lg max-[550px]:text-base'>Confira os nossos destaques</h3>
-                <p className='text-gray-900 font-semibold text-base leading-none max-[550px]:text-sm max-[550px]:hidden'>Ver todos</p>
             </ProductsSectionTitleBox>
 
             <FeaturesContainer>

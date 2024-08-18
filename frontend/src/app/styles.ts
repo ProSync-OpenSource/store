@@ -78,8 +78,8 @@ export const CategoryList = styled.ul`
 `;
 
 interface OverlayProps {
-    zIndex?: number | undefined;
-    opacity?: number;
+    zindex?: number | undefined;
+    opacity?: number | undefined;
 };
 
 export const OverlayElement = styled.div<OverlayProps>`
@@ -90,7 +90,7 @@ export const OverlayElement = styled.div<OverlayProps>`
   width: 100vw;
   box-sizing: border-box;
   background-color: black;
-  opacity: ${props => props.opacity};
+  opacity: ${props => props.opacity || 0};
   transition: opacity .1s linear;
-  z-index: ${props => props.zIndex};
+  z-index: ${props => props.zindex || -10};
 `;
