@@ -94,3 +94,39 @@ export const OverlayElement = styled.div<OverlayProps>`
   transition: opacity .1s linear;
   z-index: ${props => props.zindex || -10};
 `;
+
+export const WrapperForm = styled.div`
+  position: relative;
+  background-color: white;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  padding: 30px 20px;
+  border-radius: 5px;
+  color: #101010;
+  @media screen and (width >= 1024px) {
+    padding: 20px 30px;
+  }
+`;
+
+export const FormContainer = styled.section`
+  width: 100%;
+  height: auto;
+  @media screen and (width >= 1024px) {
+    display: flex;
+    max-width: 1280px;
+    min-height: 650px;
+    margin: auto 0px;
+    overflow-x: hidden;
+    background-color: white;
+    box-sizing: border-box;
+    overflow-y: visible;
+  }
+  @media screen and (width >= 1280px) {
+    border-radius: 8px;
+  }
+`;
