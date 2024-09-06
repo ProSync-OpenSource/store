@@ -5,8 +5,10 @@ export const Container = styled.div`
 `;
 
 export const FooterContainer = styled.footer`
-    width: calc(100% - 112px);
+    width: calc(100% - 80px);
     height: auto;
+    max-width: 1400px;
+    margin: auto;
     margin: auto;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -15,7 +17,7 @@ export const FooterContainer = styled.footer`
         width: calc(100% - 80px);
     }
     @media screen and (width <= 750px) {
-        width: calc(100% - 40px);
+        width: calc(100% - 30px);
         grid-template-columns: auto auto;
         row-gap: 30px;
     }
@@ -27,89 +29,32 @@ export const FooterContainer = styled.footer`
 
 export const HeaderNavBar = styled.div`
     width: 100%;
-    background-color: #5D0C7B;
+    max-width: 1400px;
+    margin: auto;
     z-index: 30;
-    padding: 24px 56px;
+    padding: 14px 40px 10px 40px;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     column-gap: 48px;
     row-gap: 4px;
     
-    @media screen and (width <= 980px) {
+    @media screen and (width <= 1000px) {
         column-gap: 38px;
     }
     @media screen and (width <= 900px) {
-        padding: 24px 40px;
+        padding: 24px 40px 10px 40px;
     }
     @media screen and (width <= 800px) {
         column-gap: 38px;
     }
     @media screen and (width <= 750px) {
-        padding: 24px 20px;
+        padding: 24px 15px 10px 15px;
     }
     @media screen and (width <= 550px) {
         column-gap: 30px;
     }
 `;
-
-export const MobileMenu = styled.label`
-    position: relative;
-    width: 25px;
-    height: 18px;
-    background: transparent;
-    cursor: pointer;
-    display: none;
-    z-index: 300;
-    & input {
-        display: none;
-    }
-    & span {
-        display: block;
-        position: absolute;
-        height: 2px;
-        width: 100%;
-        background-color: #F7F0F6;
-        border-radius: 5px;
-        opacity: 1;
-        left: 0;
-        transform: rotate(0deg);
-        transition: .25s ease-in-out;
-    }
-    & span:nth-of-type(1) {
-        top: 0px;
-        transform-origin: left center;
-    }
-    & span:nth-of-type(2) {
-        top: 50%;
-        transform: translateY(-50%);
-        transform-origin: left center;
-    }
-    & span:nth-of-type(3) {
-        top: 100%;
-        transform-origin: left center;
-        transform: translateY(-100%);
-    }
-    & input:checked ~ span:nth-of-type(1) {
-        transform: rotate(45deg);
-        top: 0px;
-        left: 6px;
-    }
-    & input:checked ~ span:nth-of-type(2) {
-        width: 0%;
-        opacity: 0;
-    }
-    & input:checked ~ span:nth-of-type(3) {
-        transform: rotate(-45deg);
-        top: 18px;
-        left: 6px;
-    }
-
-    @media screen and (width <= 800px) {
-        display: block;
-    }
-`;
-
 
 export const CategoryList = styled.ul`
     box-sizing: border-box;
@@ -132,34 +77,9 @@ export const CategoryList = styled.ul`
     }
 `;
 
-interface ListItemProps {
-  zIndex?: number;
-};
-
-export const CategoryListItem = styled.li<ListItemProps>`
-    width: 170px;
-    position: relative;
-    cursor: pointer;
-    border-radius: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 8px;
-    height: 40px;
-    font-weight: 500;
-    background-color: #5D0C7B;
-    color: white;
-    z-index: ${props => props.zIndex};
-    @media screen and (width <= 900px) {
-        width: 150px;
-        height: 38px;
-    }
-`;
-
-
 interface OverlayProps {
-  zIndex?: number | undefined;
-  opacity?: number;
+    zindex?: number | undefined;
+    opacity?: number | undefined;
 };
 
 export const OverlayElement = styled.div<OverlayProps>`
@@ -170,7 +90,43 @@ export const OverlayElement = styled.div<OverlayProps>`
   width: 100vw;
   box-sizing: border-box;
   background-color: black;
-  opacity: ${props => props.opacity};
+  opacity: ${props => props.opacity || 0};
   transition: opacity .1s linear;
-  z-index: ${props => props.zIndex};
+  z-index: ${props => props.zindex || -10};
+`;
+
+export const WrapperForm = styled.div`
+  position: relative;
+  background-color: white;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  padding: 30px 20px;
+  border-radius: 5px;
+  color: #101010;
+  @media screen and (width >= 1024px) {
+    padding: 20px 30px;
+  }
+`;
+
+export const FormContainer = styled.section`
+  width: 100%;
+  height: auto;
+  @media screen and (width >= 1024px) {
+    display: flex;
+    max-width: 1280px;
+    min-height: 650px;
+    margin: auto 0px;
+    overflow-x: hidden;
+    background-color: white;
+    box-sizing: border-box;
+    overflow-y: visible;
+  }
+  @media screen and (width >= 1280px) {
+    border-radius: 8px;
+  }
 `;

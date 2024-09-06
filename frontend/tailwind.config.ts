@@ -19,7 +19,7 @@ const config: Config = {
         'base-color': '#F7F0F6',
         black: '#000',
         white: '#fff'
-      }
+      },
     }
   },
   plugins: [require('daisyui')]
