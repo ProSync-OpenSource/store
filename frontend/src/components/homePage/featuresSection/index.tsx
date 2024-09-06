@@ -35,7 +35,7 @@ export default function FeaturesSection() {
                         className='w-full h-auto object-cover max-[750px]:object-bottom'
                     />
                     <div className="features-overlay">
-                        <h4 className="text-white font-semibold text-4xl max-[900px]:text-2xl max-[800px]:text-2xl">Estilo & Elegancia</h4>
+                        <h4 className="text-white font-semibold text-4xl max-[1000px]:text-2xl">Estilo & Elegancia</h4>
                         <button className="rounded-sm w-36 h-8 bg-primary text-white uppercase font-normal text-sm outline-none max-[900px]:text-[13px] max-[900px]:w-32 max-[800px]:w-28 max-[800px]:text-xs max-[800px]:font-medium">Confira</button>
                     </div>
                 </div>
@@ -48,7 +48,7 @@ export default function FeaturesSection() {
                         className='w-full h-full object-cover'
                     />
                     <div className="features-overlay">
-                        <h4 className="text-white font-semibold text-3xl max-[900px]:text-2xl max-[800px]:text-2xl">Esportes & Lazer</h4>
+                        <h4 className="text-white font-semibold text-3xl max-[1000px]:text-2xl">Esportes & Lazer</h4>
                         <button className="rounded-sm w-36 h-8 bg-primary text-white uppercase font-normal text-sm outline-none max-[900px]:text-[13px] max-[900px]:w-32 max-[800px]:w-28 max-[800px]:text-xs max-[800px]:font-medium">Confira</button>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ export default function FeaturesSection() {
                             className='w-full h-full object-cover'
                         />
                         <div className="features-overlay">
-                            <h4 className="text-white font-semibold text-2xl max-[900px]:text-base max-[800px]:text-lg max-[700px]:text-sm">Eletrodomesticos</h4>
+                            <h4 className="text-white font-semibold text-2xl max-[1000px]:text-base max-[800px]:text-lg max-[700px]:text-sm">Eletrodomesticos</h4>
                             <button className="rounded-sm w-36 h-8 bg-primary text-white uppercase font-normal text-sm outline-none max-[900px]:text-[13px] max-[900px]:w-32 max-[800px]:w-28 max-[800px]:text-xs max-[800px]:font-medium">Confira</button>
                         </div>
                     </div>
@@ -75,7 +75,7 @@ export default function FeaturesSection() {
                             className='w-full h-full object-cover'
                         />
                         <div className="features-overlay">
-                            <h4 className="text-white font-semibold text-2xl max-[900px]:text-base max-[800px]:text-lg max-[700px]:text-sm">Familia</h4>
+                            <h4 className="text-white font-semibold text-2xl max-[1000px]:text-base max-[800px]:text-lg max-[700px]:text-sm">Familia</h4>
                             <button className="rounded-sm w-36 h-8 bg-primary text-white uppercase font-normal text-sm outline-none max-[900px]:text-[13px] max-[900px]:w-32 max-[800px]:w-28 max-[800px]:text-xs max-[800px]:font-medium">Confira</button>
                         </div>
                     </div>

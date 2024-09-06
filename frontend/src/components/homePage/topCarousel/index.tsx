@@ -13,18 +13,16 @@ import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import Arrow_left from 'public/assets/home/arrow_left.png';
 import Arrow_right from 'public/assets/home/arrow_right.png';
 
-import Banner_1 from 'public/assets/home/Banner_1.png';
-import Mb_Banner_1 from 'public/assets/home/Mb_Banner_1.png';
-import Banner_3 from 'public/assets/home/Banner_3.png';
-import Mb_Banner_3 from 'public/assets/home/Mb_Banner_3.png';
+import Banner_1 from 'public/assets/home/top_banner_1.png';
+import Banner_2 from 'public/assets/home/top_banner_2.png';
 
 import { SwiperContainer } from "@/components/homePage/styles";
 
-interface Props {
+interface topSlidesProps {
   onButtonClicked: () => void
 }
 
-export function TopSlides(props: Props) {
+export function TopSlides(props: topSlidesProps) {
 
   const breakpoints = {
     200: {
@@ -48,13 +46,13 @@ export function TopSlides(props: Props) {
   }, []);
 
   const slideImages = [{
-    img: pageWidth >= 800 ? Banner_1 : Mb_Banner_1,
-    alt: 'mulher branca sorrindo e apontando para uma texto'
+    img: Banner_1,
+    alt: 'mulher branca sorrindo e apontando para uma texto',
   }, {
-    img: pageWidth >= 800 ? Banner_3 : Mb_Banner_3,
+    img: Banner_2,
     alt: 'mulher negra olhando para o celular e sorrindo'
   }, {
-    img: pageWidth >= 800 ? Banner_1 : Mb_Banner_1,
+    img: Banner_1,
     alt: 'mulher branca sorrindo e apontando para uma texto'
   }]
 
@@ -73,34 +71,22 @@ export function TopSlides(props: Props) {
   return (
     <SwiperContainer>
       <Swiper
-        style={{
-          overflow: 'visible',
-        }}
-
-        className="top-slides h-auto max-[750px]:h-56"
-
+        style={{ overflow: 'visible', }}
+        className="top-slides max-[500px]:h-32"
         loop={true}
-
         centeredSlides={true}
-
         navigation={{
           nextEl: '.btn-slide-next',
           prevEl: '.btn-slide-prev',
         }}
-
         breakpoints={breakpoints}
-
         lazyPreloadPrevNext={3}
-
         pagination={{
           clickable: false,
         }}
-
         modules={[Navigation, Autoplay, Pagination]}
       >
-
         {slides}
-
       </Swiper>
 
       <div className='swiper-controllers w-full'>

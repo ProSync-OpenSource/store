@@ -8,6 +8,8 @@ import { TbCategoryMinus } from "react-icons/tb";
 import { CgNotes } from "react-icons/cg";
 import { FaRegUser } from "react-icons/fa";
 
+import Link from "next/link";
+
 export default function mobileMenu() {
     return (
         <div className="w-9/12 max-w-80 bg-base-color min-h-dvh flex flex-col gap-y-5">
@@ -59,7 +61,7 @@ export default function mobileMenu() {
                     <li className="my-4"></li>
                     <li>
                         <div className="w-12 h-12 rounded-full flex justify-center items-center"><FaRegUser className="text-xl" /></div>
-                        Criar conta
+                        <Link href='login'>Criar conta</Link>
                     </li>
                     <li>
                         <div className="w-12 h-12 rounded-full flex justify-center items-center"><CgNotes className="text-xl" /></div>

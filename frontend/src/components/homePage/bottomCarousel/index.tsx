@@ -3,8 +3,8 @@ import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 
-import Banner_2 from 'public/assets/home/banner_2.png';
-import Mb_Banner_2 from 'public/assets/home/mb_banner_2.png';
+import Banner_1 from 'public/assets/home/bottom_banner_1.png';
+import Mobile_Banner_1 from 'public/assets/home/bottom_banner_1_mobile.png';
 
 import { SwiperContainer } from '@/components/homePage/styles';
 
@@ -23,7 +23,7 @@ export default function BottomSlides() {
     },[]);
 
     const slideImages = [{
-        img: pageWidth >= 750 ? Banner_2 : Mb_Banner_2,
+        img: pageWidth >= 750 ? Banner_1 : Mobile_Banner_1,
         alt: 'Texto ao lado da imagem de um homem em frente a tela do computador'
     }]
 

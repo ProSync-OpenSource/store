@@ -19,7 +19,7 @@ export default function AuthPage() {
 
           <div className="flex justify-end">
             <Image
-              src={'/assets/auth/prosync_logo.png'}
+              src={'/assets/shared/prosync_logo.png'}
               alt={'Logo do ProSync.'}
               width={50}
               height={50}
